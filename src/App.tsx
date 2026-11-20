@@ -8,14 +8,24 @@ import { AppointmentModal } from './components/AppointmentModal';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
+import { ServiceDetail } from './pages/ServiceDetail';
 import { Gallery } from './pages/Gallery';
 import { Contact } from './pages/Contact';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsConditions } from './pages/TermsConditions';
+import { NotFound } from './pages/NotFound';
+import { initAnalytics, trackPageView } from './utils/analytics';
 
-// Scroll to top upon route change
-function ScrollToTop() {
+// Scroll to top upon route change & track analytics
+function RouteTracker() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    initAnalytics();
+  }, []);
+
+  useEffect(() => {
+    trackPageView(pathname);
     if (hash) {
       const element = document.getElementById(hash.replace('#', ''));
       if (element) {
@@ -44,7 +54,7 @@ export function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-ivory text-charcoal font-sans selection:bg-gold/20 selection:text-olive-dark">
-      <ScrollToTop />
+      <RouteTracker />
       
       {/* Navigation Header */}
       <Navbar onOpenBooking={() => handleOpenBooking()} />
@@ -69,17 +79,15 @@ export function App() {
             path="/services"
             element={<Services onBookService={(name) => handleOpenBooking(name)} />}
           />
+          <Route
+            path="/services/:serviceId"
+            element={<ServiceDetail onBookService={(name) => handleOpenBooking(name)} />}
+          />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
-          <Route
-            path="*"
-            element={
-              <Home
-                onOpenBooking={() => handleOpenBooking()}
-                onBookService={(name) => handleOpenBooking(name)}
-              />
-            }
-          />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsConditions />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
 

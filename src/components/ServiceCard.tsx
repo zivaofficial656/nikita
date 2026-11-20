@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ServiceItem } from '../data/services';
-import { Clock, CheckCircle2, MessageSquare, ArrowUpRight } from 'lucide-react';
+import { Clock, CheckCircle2, MessageSquare, ArrowUpRight, Info } from 'lucide-react';
+import { trackWhatsAppClick, trackBookingOpen } from '../utils/analytics';
 
 interface ServiceCardProps {
   service: ServiceItem;
@@ -13,7 +15,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBookService
   return (
     <div className="group bg-white rounded-3xl overflow-hidden border border-cream-dark shadow-soft hover:shadow-premium transition-all duration-300 flex flex-col h-full">
       {/* Service Image with Tag */}
-      <div className="relative h-60 sm:h-64 overflow-hidden bg-cream">
+      <Link to={`/services/${service.id}`} className="relative h-60 sm:h-64 overflow-hidden bg-cream block">
         <img
           src={service.image}
           alt={`${service.name} at Nikita Spa Koramangala`}
@@ -32,14 +34,16 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBookService
           <Clock className="w-3.5 h-3.5 text-gold" />
           <span>{service.durationOptions.join(' / ')}</span>
         </div>
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between space-y-5">
         <div className="space-y-3">
-          <h3 className="font-serif text-2xl font-medium text-olive-dark group-hover:text-gold-dark transition-colors">
-            {service.name}
-          </h3>
+          <Link to={`/services/${service.id}`}>
+            <h3 className="font-serif text-2xl font-medium text-olive-dark group-hover:text-gold-dark transition-colors">
+              {service.name}
+            </h3>
+          </Link>
           
           <p className="text-charcoal-muted text-sm leading-relaxed">
             {service.shortDescription}
@@ -64,13 +68,22 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBookService
         {/* Pricing notice & action CTAs */}
         <div className="pt-4 border-t border-cream-dark space-y-3">
           <div className="flex items-center justify-between text-xs text-charcoal-muted">
-            <span className="italic">Customized Session</span>
-            <span className="font-medium text-olive">Inquire for Slot & Rates</span>
+            <Link 
+              to={`/services/${service.id}`}
+              className="text-olive hover:text-gold font-medium inline-flex items-center gap-1"
+            >
+              <Info className="w-3 h-3" />
+              <span>Full Details</span>
+            </Link>
+            <span className="font-medium text-charcoal-muted">Inquire for Slot</span>
           </div>
 
           <div className="grid grid-cols-2 gap-2">
             <button
-              onClick={() => onBookService(service.name)}
+              onClick={() => {
+                trackBookingOpen(`card_${service.id}`);
+                onBookService(service.name);
+              }}
               className="w-full py-2.5 px-3 rounded-full bg-olive text-ivory text-xs font-medium hover:bg-olive-light transition-colors text-center flex items-center justify-center gap-1"
             >
               <span>Book Slot</span>
@@ -81,6 +94,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBookService
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(`card_${service.id}`)}
               className="w-full py-2.5 px-3 rounded-full bg-cream hover:bg-cream-dark text-olive-dark text-xs font-medium transition-colors text-center flex items-center justify-center gap-1.5 border border-cream-dark"
             >
               <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />

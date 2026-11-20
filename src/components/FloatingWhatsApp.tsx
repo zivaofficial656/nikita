@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export const FloatingWhatsApp: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(true);
@@ -30,6 +31,7 @@ export const FloatingWhatsApp: React.FC = () => {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick('floating_widget')}
         aria-label="Book on WhatsApp with Nikita Spa"
         className="pointer-events-auto group relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-elevated hover:scale-105 hover:shadow-2xl transition-all duration-300"
       >

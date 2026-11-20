@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { galleryData, GalleryImage } from '../data/gallery';
 import { Sparkles, Eye, X, MessageSquare } from 'lucide-react';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../utils/seoSchema';
 
 export const Gallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [modalImage, setModalImage] = useState<GalleryImage | null>(null);
 
   const categories = ['All', 'Treatment Rooms', 'Interiors', 'Atmosphere', 'Rituals'];
+
+  const gallerySchemas = [
+    getLocalBusinessSchema(),
+    getBreadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Gallery', path: '/gallery' }
+    ])
+  ];
 
   const filteredImages = galleryData.filter((item) => {
     if (activeCategory === 'All') return true;
@@ -17,10 +26,12 @@ export const Gallery: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Sanctuary Gallery & Atmosphere | Nikita Spa Koramangala, Bengaluru"
-        description="Take a visual tour of Nikita Spa's serene luxury treatment suites, calming reception lounge, herbal preparation rituals, and wellness ambiance in Koramangala."
-        keywords="Nikita Spa Gallery, Spa Interior Koramangala, Luxury Spa Bengaluru, Massage Rooms Bangalore"
-        canonical="https://nikitaspa.com/gallery"
+        title="Spa Gallery & Ambience in Koramangala Bengaluru | Nikita Spa"
+        description="Tour Nikita Spa's serene luxury suites, calm reception lounge, sanitized massage rooms, and tranquil wellness atmosphere in Koramangala, Bengaluru."
+        keywords="spa in koramangala, luxury spa in bangalore, best spa in bangalore, spa interior koramangala, private massage suites bengaluru, nikita spa gallery"
+        canonical="/gallery"
+        ogImage="/images/og-image.jpg"
+        schema={gallerySchemas}
       />
 
       <main className="pt-28 pb-20">

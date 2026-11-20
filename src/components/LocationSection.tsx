@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, MessageSquare, Compass, Clock, Navigation, CheckCircle2, ExternalLink } from 'lucide-react';
+import { trackCallClick, trackWhatsAppClick, trackDirectionsClick } from '../utils/analytics';
 
 export const LocationSection: React.FC = () => {
   return (
@@ -82,6 +83,7 @@ export const LocationSection: React.FC = () => {
                 href="https://www.google.com/maps/dir/?api=1&destination=12.93401024156366,77.63006964588301"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackDirectionsClick('location_section_card')}
                 aria-label="Get Directions to Nikita Spa on Google Maps"
                 className="w-full py-3.5 px-4 rounded-2xl bg-olive text-ivory text-xs sm:text-sm font-medium hover:bg-olive-light transition-colors text-center flex items-center justify-center gap-2 shadow-soft"
               >
@@ -92,6 +94,7 @@ export const LocationSection: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
                   href="tel:9693264878"
+                  onClick={() => trackCallClick('location_section')}
                   aria-label="Call Nikita Spa at 9693264878"
                   className="py-3 px-4 rounded-2xl bg-cream hover:bg-cream-dark text-olive-dark text-xs sm:text-sm font-medium transition-colors text-center flex items-center justify-center gap-2 border border-cream-dark"
                 >
@@ -103,6 +106,7 @@ export const LocationSection: React.FC = () => {
                   href="https://wa.me/919693264878"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('location_section')}
                   aria-label="Chat on WhatsApp with Nikita Spa"
                   className="py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-medium transition-colors text-center flex items-center justify-center gap-2 shadow-soft"
                 >
@@ -169,6 +173,7 @@ export const LocationSection: React.FC = () => {
                 href="https://www.google.com/maps/dir/?api=1&destination=12.93401024156366,77.63006964588301"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackDirectionsClick('location_section_badge')}
                 aria-label="Get Directions to Nikita Spa on Google Maps"
                 className="text-olive hover:text-gold font-medium underline flex items-center gap-1"
               >

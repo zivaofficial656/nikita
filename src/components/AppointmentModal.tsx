@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, Sparkles, Phone, MessageSquare } from 'lucide-react';
 import { servicesData } from '../data/services';
+import { trackBookingSubmit, trackCallClick } from '../utils/analytics';
 
 interface AppointmentModalProps {
   isOpen: boolean;
@@ -27,6 +28,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackBookingSubmit(selectedService);
     const message = `Hello Nikita Spa, I would like to book an appointment.%0A%0A*Name:* ${encodeURIComponent(name || 'Guest')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Selected Service:* ${encodeURIComponent(selectedService)}%0A*Preferred Date:* ${encodeURIComponent(preferredDate || 'Earliest Available')}%0A*Time Window:* ${encodeURIComponent(preferredTime)}%0A${notes ? `*Special Request:* ${encodeURIComponent(notes)}%0A` : ''}%0APlease confirm slot availability at Nikita Spa, Koramangala.`;
     
     window.open(`https://wa.me/919693264878?text=${message}`, '_blank');
@@ -68,6 +70,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
               </button>
               <a
                 href="tel:+919693264878"
+                onClick={() => trackCallClick('appointment_modal_success')}
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-olive/30 text-olive text-sm font-medium hover:bg-cream transition-colors"
               >
                 <Phone className="w-4 h-4" /> Call Front Desk
@@ -196,6 +199,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 <span>Or speak directly:</span>
                 <a 
                   href="tel:+919693264878"
+                  onClick={() => trackCallClick('appointment_modal_footer')}
                   className="inline-flex items-center gap-1 font-semibold text-olive hover:text-gold transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5" /> +91 9693264878

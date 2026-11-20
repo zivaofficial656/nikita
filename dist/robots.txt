@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nikitaspa.com/sitemap.xml
+# Sitemap
+Sitemap: https://nikita.online/sitemap.xml

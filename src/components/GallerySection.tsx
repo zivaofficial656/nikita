@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { galleryData, GalleryImage } from '../data/gallery';
 import { Sparkles, ArrowRight, Eye, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export const GallerySection: React.FC = () => {
   const [activeImage, setActiveImage] = useState<GalleryImage | null>(null);
@@ -119,9 +120,10 @@ export const GallerySection: React.FC = () => {
                 </p>
               </div>
               <a
-                href="https://wa.me/919693264878?text=Hello%20Nitiya%20Spa%2C%20I%20would%20like%20to%20visit%20your%20spa."
+                href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20would%20like%20to%20visit%20your%20spa."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('gallery_modal')}
                 className="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-olive text-ivory text-xs font-medium hover:bg-olive-light transition-colors"
               >
                 Inquire on WhatsApp

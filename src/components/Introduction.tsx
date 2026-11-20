@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, Flower2, HeartHandshake, Compass } from 'lucide-react';
+import { trackWhatsAppClick, trackBookingOpen } from '../utils/analytics';
 
 interface IntroductionProps {
   onOpenBooking: () => void;
@@ -16,7 +17,9 @@ export const Introduction: React.FC<IntroductionProps> = ({ onOpenBooking }) => 
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-elevated border border-cream-dark">
               <img
                 src="/images/n4.webp"
-                alt="Nitiya Spa circular luxury suite in Koramangala"
+                alt="Nikita Spa circular luxury suite in Koramangala"
+                width="1360"
+                height="628"
                 className="w-full h-[460px] sm:h-[540px] object-cover object-center hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
@@ -41,7 +44,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onOpenBooking }) => 
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-olive text-xs font-medium tracking-wide uppercase">
               <Sparkles className="w-3.5 h-3.5 text-gold" />
-              Welcome to Nitiya Spa
+              Welcome to Nikita Spa
             </div>
 
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-olive-dark font-normal tracking-tight leading-[1.2]">
@@ -49,7 +52,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onOpenBooking }) => 
             </h2>
 
             <p className="text-base sm:text-lg text-charcoal-light leading-relaxed font-light">
-              In the heart of Bengaluru's energetic Koramangala district, <strong className="font-medium text-charcoal">Nitiya Spa</strong> was envisioned as a tranquil haven—a quiet, welcoming sanctuary dedicated to personal comfort, tension relief, and deep restoration.
+              In the heart of Bengaluru's energetic Koramangala district, <strong className="font-medium text-charcoal">Nikita Spa</strong> was envisioned as a tranquil haven—a quiet, welcoming sanctuary dedicated to personal comfort, tension relief, and deep restoration.
             </p>
 
             <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed">
@@ -81,16 +84,20 @@ export const Introduction: React.FC<IntroductionProps> = ({ onOpenBooking }) => 
 
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <button
-                onClick={onOpenBooking}
+                onClick={() => {
+                  trackBookingOpen('intro_section');
+                  onOpenBooking();
+                }}
                 className="px-7 py-3 rounded-full bg-olive text-ivory text-sm font-medium hover:bg-olive-light transition-all shadow-soft"
               >
                 Schedule Your Visit
               </button>
               
               <a
-                href="https://wa.me/919693264878?text=Hello%20Nitiya%20Spa%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+                href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('intro_section')}
                 className="px-6 py-3 rounded-full border border-cream-dark hover:border-olive/30 text-olive-dark text-sm font-medium hover:bg-cream transition-colors"
               >
                 Inquire on WhatsApp

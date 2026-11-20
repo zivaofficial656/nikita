@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, MessageSquare, Sparkles, MapPin } from 'lucide-react';
+import { trackCallClick, trackWhatsAppClick, trackBookingOpen } from '../utils/analytics';
 
 interface FinalCTAProps {
   onOpenBooking: () => void;
@@ -41,6 +42,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking }) => {
             href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick('final_cta')}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gold hover:bg-gold-light text-charcoal font-semibold text-sm tracking-wide transition-all duration-300 shadow-premium"
           >
             <MessageSquare className="w-4 h-4 text-charcoal" />
@@ -49,6 +51,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking }) => {
 
           <a
             href="tel:+919693264878"
+            onClick={() => trackCallClick('final_cta')}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent border border-ivory/30 hover:border-gold hover:text-gold text-ivory font-medium text-sm tracking-wide transition-all duration-300"
           >
             <Phone className="w-4 h-4" />
@@ -64,7 +67,10 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking }) => {
           </span>
           <span className="hidden sm:inline">&bull;</span>
           <button
-            onClick={onOpenBooking}
+            onClick={() => {
+              trackBookingOpen('final_cta');
+              onOpenBooking();
+            }}
             className="text-gold hover:underline font-medium"
           >
             Or open the online appointment form &rarr;

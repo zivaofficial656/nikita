@@ -9,6 +9,7 @@ import { TestimonialsSection } from '../components/TestimonialsSection';
 import { LocationSection } from '../components/LocationSection';
 import { FAQSection } from '../components/FAQSection';
 import { FinalCTA } from '../components/FinalCTA';
+import { getLocalBusinessSchema, getWebsiteSchema, getFAQSchema } from '../utils/seoSchema';
 
 interface HomeProps {
   onOpenBooking: () => void;
@@ -16,13 +17,21 @@ interface HomeProps {
 }
 
 export const Home: React.FC<HomeProps> = ({ onOpenBooking, onBookService }) => {
+  const homeSchemas = [
+    getLocalBusinessSchema(),
+    getWebsiteSchema(),
+    getFAQSchema()
+  ];
+
   return (
     <>
       <SEOHead
-        title="Nikita Spa | Luxury Wellness & Massage Spa in Koramangala, Bengaluru"
-        description="Discover peaceful relaxation at Nikita Spa, Koramangala, Bengaluru. Experience premium full body massage, deep tissue, Swedish, Thai, and aromatherapy therapies in private, hygienic suites."
-        keywords="Spa in Koramangala, Best Spa in Koramangala Bengaluru, Spa in Bangalore, Massage Centre in Koramangala, Full Body Massage in Koramangala, Luxury Spa in Bengaluru, Massage Services in Bangalore"
-        canonical="https://nikitaspa.com/"
+        title="Nikita Spa | Best Luxury Wellness & Body Massage Spa in Koramangala Bengaluru"
+        description="Escape the everyday at Nikita Spa in Koramangala, Bengaluru. Experience top-rated full body massage, deep tissue, Swedish, Thai, and couple spa therapies in private sanitized suites."
+        keywords="spa in bangalore, best spa in bangalore, spa near me, body massage in bangalore, body massage near me, couple spa in bangalore, luxury spa in bangalore, thai massage in bangalore, full body massage in bangalore, spa in koramangala, spa in koramangala bengaluru, body massage in koramangala bengaluru, couple spa in koramangala bengaluru, luxury spa in koramangala bengaluru, thai massage in koramangala bengaluru, full body massage in koramangala bengaluru, body massage spa in koramangala"
+        canonical="/"
+        ogImage="/images/og-image.jpg"
+        schema={homeSchemas}
       />
 
       {/* Main Homepage Sections */}

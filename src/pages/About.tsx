@@ -1,19 +1,31 @@
 import React from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { Sparkles, HeartHandshake, ShieldCheck, Flower2, Clock, MapPin, MessageSquare, Phone } from 'lucide-react';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../utils/seoSchema';
+import { trackCallClick, trackWhatsAppClick } from '../utils/analytics';
 
 interface AboutProps {
   onOpenBooking: () => void;
 }
 
 export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
+  const aboutSchemas = [
+    getLocalBusinessSchema(),
+    getBreadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'About Us', path: '/about' }
+    ])
+  ];
+
   return (
     <>
       <SEOHead
-        title="About Nikita Spa | Luxury Wellness Philosophy in Koramangala, Bengaluru"
-        description="Learn about Nikita Spa's dedication to mindful wellness, authentic therapeutic massage, and tranquil guest comfort in Koramangala, Bengaluru."
-        keywords="About Nikita Spa, Spa in Koramangala, Luxury Wellness Bengaluru, Best Spa Koramangala"
-        canonical="https://nikitaspa.com/about"
+        title="About Nikita Spa | Luxury Wellness & Massage Sanctuary in Koramangala Bengaluru"
+        description="Learn about Nikita Spa's dedication to mindful wellness, authentic therapeutic massage, certified therapists, and tranquil private suites in Koramangala, Bengaluru."
+        keywords="about nikita spa, luxury spa in bangalore, best spa in koramangala bengaluru, massage centre in koramangala, body massage in bangalore, spa near me"
+        canonical="/about"
+        ogImage="/images/og-image.jpg"
+        schema={aboutSchemas}
       />
 
       <main className="pt-28 pb-20">
@@ -159,6 +171,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
                 href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('about_cta')}
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-cream border border-cream-dark text-olive-dark text-sm font-medium hover:bg-cream-dark transition-colors"
               >
                 <MessageSquare className="w-4 h-4 text-emerald-600" />
@@ -166,6 +179,7 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
               </a>
               <a
                 href="tel:+919693264878"
+                onClick={() => trackCallClick('about_cta')}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-cream-dark text-charcoal-light text-sm font-medium hover:text-olive transition-colors"
               >
                 <Phone className="w-4 h-4 text-gold" />

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Sparkles, Quote, Info } from 'lucide-react';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export const TestimonialsSection: React.FC = () => {
   // Marked sample placeholders per strict business guidelines: Never fabricate reviews or ratings.
   const sampleTestimonials = [
     {
-      quote: "The serene environment and discreet care make Nitiya Spa a refreshing sanctuary after long workdays in Bengaluru. The private suites are exceptionally maintained.",
+      quote: "The serene environment and discreet care make Nikita Spa a refreshing sanctuary after long workdays in Bengaluru. The private suites are exceptionally maintained.",
       category: "Full Body Experience",
       clientPlaceholder: "Guest Experience Reflection",
       location: "Bengaluru Resident",
@@ -41,7 +42,7 @@ export const TestimonialsSection: React.FC = () => {
             Words of Stillness & Comfort
           </h2>
           <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-light">
-            Our guest philosophy centers on authentic relaxation, genuine cleanliness, and mindful hospitality.
+            Our guest philosophy centers on authentic relaxation, genuine cleanliness, and mindful hospitality at Nikita Spa.
           </p>
 
           {/* Business Transparency Disclosure */}
@@ -80,7 +81,7 @@ export const TestimonialsSection: React.FC = () => {
                   </span>
                 </div>
                 <span className="text-[10px] uppercase font-semibold text-charcoal-muted/70 tracking-wider">
-                  Nitiya Spa
+                  Nikita Spa
                 </span>
               </div>
             </div>
@@ -90,11 +91,12 @@ export const TestimonialsSection: React.FC = () => {
         {/* Share feedback CTA */}
         <div className="mt-12 text-center">
           <p className="text-xs text-charcoal-muted">
-            Have you recently visited Nitiya Spa in Koramangala? We warmly welcome your direct thoughts via{' '}
+            Have you recently visited Nikita Spa in Koramangala? We warmly welcome your direct thoughts via{' '}
             <a
-              href="https://wa.me/919693264878?text=Hello%20Nitiya%20Spa%2C%20I%20would%20like%20to%20share%20feedback%20on%20my%20recent%20visit."
+              href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20would%20like%20to%20share%20feedback%20on%20my%20recent%20visit."
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('testimonials_feedback')}
               className="text-olive underline font-medium hover:text-gold"
             >
               WhatsApp Concierge

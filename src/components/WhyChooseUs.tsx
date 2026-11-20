@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, Moon, Sliders, Home, HeartHandshake, MapPin } from 'lucide-react';
+import { trackCallClick } from '../utils/analytics';
 
 export const WhyChooseUs: React.FC = () => {
   const features = [
@@ -38,13 +39,13 @@ export const WhyChooseUs: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-olive text-xs font-medium tracking-wide uppercase mb-3">
             <Sparkles className="w-3.5 h-3.5 text-gold" />
-            The Nitiya Difference
+            The Nikita Difference
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-olive-dark font-normal tracking-tight mb-4">
-            Why Choose Nitiya Spa
+            Why Choose Nikita Spa
           </h2>
           <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-light">
-            We focus on genuine hospitality, spotless hygienic surroundings, and mindful attention to detail so you can enjoy uninterrupted rest.
+            We focus on genuine hospitality, spotless hygienic surroundings, and mindful attention to detail so you can enjoy uninterrupted rest in Koramangala, Bengaluru.
           </p>
         </div>
 
@@ -86,13 +87,14 @@ export const WhyChooseUs: React.FC = () => {
                 A Peaceful Haven Amidst Bengaluru's Pulse
               </h3>
               <p className="text-ivory/80 text-sm leading-relaxed font-light">
-                No loud distractions, no rushed appointments. Step into Nitiya Spa and surrender your fatigue to soothing hands and tranquil warmth.
+                No loud distractions, no rushed appointments. Step into Nikita Spa and surrender your fatigue to soothing hands and tranquil warmth.
               </p>
             </div>
             <div className="relative z-10 pt-6 mt-6 border-t border-olive-light/40 flex items-center justify-between">
               <span className="text-xs text-gold">Direct Reservation:</span>
               <a
                 href="tel:+919693264878"
+                onClick={() => trackCallClick('why_choose_us')}
                 className="text-xs font-semibold text-ivory hover:text-gold transition-colors"
               >
                 +91 9693264878

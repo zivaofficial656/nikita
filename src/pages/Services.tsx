@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
 import { servicesData, ServiceItem } from '../data/services';
 import { Sparkles, Clock, CheckCircle2, MessageSquare, ArrowUpRight, Search } from 'lucide-react';
+import { getLocalBusinessSchema, getBreadcrumbSchema, getServiceSchema } from '../utils/seoSchema';
+import { trackBookingOpen, trackWhatsAppClick } from '../utils/analytics';
 
 interface ServicesProps {
   onBookService: (serviceName: string) => void;
@@ -12,6 +15,15 @@ export const Services: React.FC<ServicesProps> = ({ onBookService }) => {
   const [selectedTag, setSelectedTag] = useState('All');
 
   const tags = ['All', 'Signature', 'Relaxation', 'Therapeutic', 'Suites'];
+
+  const servicesSchemas = [
+    getLocalBusinessSchema(),
+    getBreadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Services', path: '/services' }
+    ]),
+    ...servicesData.map(getServiceSchema)
+  ];
 
   const filteredServices = servicesData.filter((svc) => {
     const matchesSearch =
@@ -30,10 +42,12 @@ export const Services: React.FC<ServicesProps> = ({ onBookService }) => {
   return (
     <>
       <SEOHead
-        title="Massage & Wellness Services | Nikita Spa Koramangala, Bengaluru"
-        description="Explore luxury spa treatments at Nikita Spa, Koramangala. Full Body Massage, Deep Tissue, Swedish, Thai, Aromatherapy, and Couple Massages tailored for deep tension relief."
-        keywords="Full Body Massage in Koramangala, Massage Services in Bangalore, Swedish Massage Koramangala, Deep Tissue Massage Bengaluru, Couple Massage Koramangala, Aromatherapy Spa Bangalore"
-        canonical="https://nikitaspa.com/services"
+        title="Massage & Spa Treatments in Koramangala Bengaluru | Nikita Spa"
+        description="Explore luxury spa treatments at Nikita Spa, Koramangala, Bengaluru. Full body massage, deep tissue, Swedish, Thai, and couple massage therapies in private suites."
+        keywords="spa in bangalore, best spa in bangalore, body massage in bangalore, full body massage in bangalore, thai massage in bangalore, couple spa in bangalore, luxury spa in bangalore, spa in koramangala, body massage in koramangala bengaluru, thai massage in koramangala bengaluru, couple spa in koramangala bengaluru"
+        canonical="/services"
+        ogImage="/images/og-image.jpg"
+        schema={servicesSchemas}
       />
 
       <main className="pt-28 pb-20">
@@ -161,17 +175,28 @@ export const Services: React.FC<ServicesProps> = ({ onBookService }) => {
                         {/* Booking action buttons */}
                         <div className="pt-4 flex flex-wrap items-center gap-3">
                           <button
-                            onClick={() => onBookService(service.name)}
+                            onClick={() => {
+                              trackBookingOpen(service.name);
+                              onBookService(service.name);
+                            }}
                             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-olive text-ivory text-xs font-medium hover:bg-olive-light transition-colors"
                           >
                             <span>Book {service.name}</span>
                             <ArrowUpRight className="w-3.5 h-3.5" />
                           </button>
 
+                          <Link
+                            to={`/services/${service.id}`}
+                            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border border-olive/30 text-olive-dark text-xs font-medium hover:bg-olive hover:text-ivory transition-colors"
+                          >
+                            <span>Therapy Details &rarr;</span>
+                          </Link>
+
                           <a
                             href={whatsappUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => trackWhatsAppClick('services_page', service.name)}
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream border border-cream-dark text-olive-dark text-xs font-medium hover:bg-cream-dark transition-colors"
                           >
                             <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />

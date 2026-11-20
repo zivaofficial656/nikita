@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { faqData, FAQItem } from '../data/faq';
 import { Sparkles, ChevronDown, MessageSquare } from 'lucide-react';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -23,7 +24,7 @@ export const FAQSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-light">
-            Everything you need to know about reserving your treatment and preparing for your visit to Nitiya Spa, Koramangala.
+            Everything you need to know about reserving your treatment and preparing for your visit to Nikita Spa, Koramangala.
           </p>
         </div>
 
@@ -70,9 +71,10 @@ export const FAQSection: React.FC = () => {
             <p className="text-xs text-charcoal-muted">Our Koramangala concierge is ready to help via WhatsApp.</p>
           </div>
           <a
-            href="https://wa.me/919693264878?text=Hello%20Nitiya%20Spa%2C%20I%20have%20a%20question%20regarding%20your%20services."
+            href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20have%20a%20question%20regarding%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick('faq_section')}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-olive text-ivory text-xs font-medium hover:bg-olive-light transition-colors shrink-0"
           >
             <MessageSquare className="w-3.5 h-3.5 text-gold" />

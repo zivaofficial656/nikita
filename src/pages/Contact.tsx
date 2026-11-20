@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
 import { MapPin, Phone, MessageSquare, Sparkles, CheckCircle2, ShieldCheck, Navigation, Compass, ExternalLink } from 'lucide-react';
 import { servicesData } from '../data/services';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../utils/seoSchema';
+import { trackFormSubmission, trackCallClick, trackWhatsAppClick, trackDirectionsClick } from '../utils/analytics';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -13,8 +15,17 @@ export const Contact: React.FC = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  const contactSchemas = [
+    getLocalBusinessSchema(),
+    getBreadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Contact Us', path: '/contact' }
+    ])
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackFormSubmission(formData.service);
     const text = `Hello Nikita Spa, I have a booking inquiry from your website:%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Service:* ${encodeURIComponent(formData.service)}%0A*Date:* ${encodeURIComponent(formData.preferredDate || 'Earliest Slot')}%0A*Notes:* ${encodeURIComponent(formData.message || 'None')}%0APlease let me know your available slots at Koramangala, Bengaluru.`;
     
     window.open(`https://wa.me/919693264878?text=${text}`, '_blank');
@@ -24,10 +35,12 @@ export const Contact: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Contact & Location | Nikita Spa Koramangala, Bengaluru"
-        description="Get in touch with Nikita Spa in Koramangala, Bengaluru. Reserve your massage appointment via WhatsApp (+91 9693264878) or phone call. View location and directions."
-        keywords="Contact Nikita Spa, Spa in Koramangala phone number, Massage Bangalore contact, Nikita Spa address Koramangala"
-        canonical="https://nikitaspa.com/contact"
+        title="Contact & Location | Nikita Spa Koramangala Bengaluru | Phone & Directions"
+        description="Connect with Nikita Spa in Koramangala, Bengaluru. Call +91 9693264878 or message on WhatsApp for instant massage appointments, suite bookings, and turn-by-turn directions."
+        keywords="spa in koramangala, spa in koramangala bengaluru, contact nikita spa, body massage in koramangala bengaluru, spa near me, massage centre in koramangala, luxury spa in bangalore"
+        canonical="/contact"
+        ogImage="/images/og-image.jpg"
+        schema={contactSchemas}
       />
 
       <main className="pt-28 pb-20">
@@ -80,6 +93,7 @@ export const Contact: React.FC = () => {
                       </span>
                       <a
                         href="tel:+919693264878"
+                        onClick={() => trackCallClick('contact_page_info')}
                         className="text-base font-semibold text-olive-dark hover:text-gold transition-colors block mt-0.5"
                       >
                         +91 9693264878
@@ -103,6 +117,7 @@ export const Contact: React.FC = () => {
                         href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackWhatsAppClick('contact_page_info')}
                         className="text-base font-semibold text-emerald-800 hover:text-emerald-600 transition-colors block mt-0.5"
                       >
                         +91 9693264878
@@ -364,6 +379,7 @@ export const Contact: React.FC = () => {
                 <div className="flex flex-wrap items-center gap-3">
                   <a
                     href="tel:9693264878"
+                    onClick={() => trackCallClick('contact_page_map')}
                     aria-label="Call Nikita Spa at 9693264878"
                     className="py-3 px-5 rounded-2xl bg-cream hover:bg-cream-dark text-olive-dark text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-2 border border-cream-dark"
                   >
@@ -375,6 +391,7 @@ export const Contact: React.FC = () => {
                     href="https://wa.me/919693264878"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick('contact_page_map')}
                     aria-label="Chat on WhatsApp with Nikita Spa"
                     className="py-3 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-2 shadow-soft"
                   >
@@ -386,6 +403,7 @@ export const Contact: React.FC = () => {
                     href="https://www.google.com/maps/dir/?api=1&destination=12.93401024156366,77.63006964588301"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackDirectionsClick('contact_page_map')}
                     aria-label="Get Directions to Nikita Spa on Google Maps"
                     className="py-3 px-6 rounded-2xl bg-olive text-ivory text-xs sm:text-sm font-medium hover:bg-olive-light transition-colors inline-flex items-center gap-2 shadow-soft"
                   >

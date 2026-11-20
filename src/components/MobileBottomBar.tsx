@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, MessageSquare, Calendar } from 'lucide-react';
+import { trackCallClick, trackWhatsAppClick, trackBookingOpen } from '../utils/analytics';
 
 interface MobileBottomBarProps {
   onOpenBooking: () => void;
@@ -11,6 +12,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({ onOpenBooking 
       <div className="grid grid-cols-3 gap-2">
         <a
           href="tel:+919693264878"
+          onClick={() => trackCallClick('mobile_bottom_bar')}
           className="flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-cream/70 text-olive-dark hover:bg-cream transition-colors text-center"
         >
           <Phone className="w-4 h-4 mb-0.5 text-olive" />
@@ -21,6 +23,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({ onOpenBooking 
           href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick('mobile_bottom_bar')}
           className="flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-[#25D366]/15 text-emerald-800 hover:bg-[#25D366]/25 transition-colors text-center"
         >
           <MessageSquare className="w-4 h-4 mb-0.5 text-emerald-600" />
@@ -28,7 +31,10 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({ onOpenBooking 
         </a>
 
         <button
-          onClick={onOpenBooking}
+          onClick={() => {
+            trackBookingOpen('mobile_bottom_bar');
+            onOpenBooking();
+          }}
           className="flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-olive text-ivory hover:bg-olive-light transition-colors text-center"
         >
           <Calendar className="w-4 h-4 mb-0.5 text-gold" />

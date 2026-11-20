@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, MessageSquare } from 'lucide-react';
+import { trackCallClick, trackWhatsAppClick, trackBookingOpen } from '../utils/analytics';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -36,6 +37,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     return location.pathname.startsWith(path);
   };
 
+  const handleBookingClick = () => {
+    trackBookingOpen('navbar');
+    onOpenBooking();
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -48,16 +54,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center group py-1">
+          <Link to="/" className="flex items-center group py-1" aria-label="Nikita Spa - Home">
             <img
               src="/images/Elegant%20Nitiya%20Spa%20Logo%20with%20Lotus%20Accents.png"
-              alt="Nitiya Spa Logo"
+              alt="Nikita Spa Logo - Luxury Spa in Koramangala, Bengaluru"
+              width="180"
+              height="48"
               className="h-10 sm:h-12 md:h-14 w-auto max-w-[150px] sm:max-w-[180px] md:max-w-[210px] object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8" aria-label="Primary Navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -80,6 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="tel:+919693264878"
+              onClick={() => trackCallClick('navbar_desktop')}
               className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-charcoal-light hover:text-olive transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-gold" />
@@ -87,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </a>
 
             <button
-              onClick={onOpenBooking}
+              onClick={handleBookingClick}
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-olive text-ivory text-xs font-medium uppercase tracking-wider hover:bg-olive-light transition-all duration-300 shadow-soft hover:shadow-premium"
             >
               Book Appointment
@@ -97,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           {/* Mobile Menu & Quick CTA Trigger */}
           <div className="flex items-center gap-2 md:hidden">
             <button
-              onClick={onOpenBooking}
+              onClick={handleBookingClick}
               className="px-3 py-1.5 rounded-full bg-olive text-ivory text-xs font-medium"
             >
               Book
@@ -136,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenBooking();
+                handleBookingClick();
               }}
               className="w-full py-3 rounded-full bg-olive text-ivory font-medium text-sm flex items-center justify-center gap-2"
             >
@@ -146,14 +155,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             <div className="grid grid-cols-2 gap-2">
               <a
                 href="tel:+919693264878"
+                onClick={() => trackCallClick('navbar_mobile')}
                 className="py-2.5 px-3 rounded-xl border border-cream-dark bg-white text-center text-xs font-medium text-charcoal flex items-center justify-center gap-1.5"
               >
                 <Phone className="w-3.5 h-3.5 text-olive" /> Call Now
               </a>
               <a
-                href="https://wa.me/919693264878?text=Hello%20Nitiya%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
+                href="https://wa.me/919693264878?text=Hello%20Nikita%20Spa%2C%20I%20would%20like%20to%20book%20an%20appointment."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('navbar_mobile')}
                 className="py-2.5 px-3 rounded-xl bg-sage/20 text-center text-xs font-medium text-olive-dark flex items-center justify-center gap-1.5"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-sage" /> WhatsApp
