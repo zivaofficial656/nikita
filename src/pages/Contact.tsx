@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SEOHead } from '../components/SEOHead';
-import { MapPin, Phone, MessageSquare, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, MessageSquare, Sparkles, CheckCircle2, ShieldCheck, Navigation, Compass, ExternalLink } from 'lucide-react';
 import { servicesData } from '../data/services';
 
 export const Contact: React.FC = () => {
@@ -114,22 +114,29 @@ export const Contact: React.FC = () => {
                   </div>
 
                   {/* Address */}
-                  <div className="p-5 rounded-2xl bg-white border border-cream-dark shadow-soft flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-gold/15 text-gold-dark flex items-center justify-center shrink-0 mt-0.5">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View Nikita Spa on Google Maps"
+                    className="p-5 rounded-2xl bg-white border border-cream-dark shadow-soft flex items-start gap-4 group hover:border-gold/60 transition-colors cursor-pointer"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gold/15 text-gold-dark flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-gold/25 transition-colors">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
                       <span className="text-[11px] font-semibold uppercase tracking-wider text-charcoal-muted block">
                         Location
                       </span>
-                      <p className="text-sm font-medium text-olive-dark mt-0.5">
-                        Nikita Spa, Koramangala
+                      <p className="text-sm font-medium text-olive-dark group-hover:text-gold transition-colors mt-0.5 flex items-center gap-1.5">
+                        <span>Nikita Spa, Koramangala</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-charcoal-muted group-hover:text-gold transition-colors" />
                       </p>
                       <p className="text-xs text-charcoal-muted mt-0.5">
                         Bengaluru, Karnataka, India
                       </p>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Hygiene & Comfort Guarantee */}
                   <div className="p-5 rounded-2xl bg-cream/60 border border-cream-dark flex items-center gap-3 text-xs text-charcoal-muted">
@@ -273,32 +280,120 @@ export const Contact: React.FC = () => {
           </div>
         </section>
 
-        {/* Google Maps Embed Section */}
-        <section className="py-16 bg-cream/40 border-t border-cream-dark">
+        {/* Google Maps Embed / Location Section */}
+        <section id="location" className="py-16 sm:py-20 bg-cream/40 border-t border-cream-dark scroll-mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="text-xs font-semibold uppercase tracking-wider text-gold mb-2 block">
-                Map & Directions
-              </span>
-              <h3 className="font-serif text-3xl text-olive-dark font-normal">
-                Visit Us in Koramangala
-              </h3>
-              <p className="text-xs sm:text-sm text-charcoal-muted mt-2">
-                Centrally positioned in Bengaluru, with convenient parking and transit connections.
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage/15 text-olive text-xs font-medium tracking-wide uppercase mb-3">
+                <Compass className="w-3.5 h-3.5 text-gold" />
+                Sanctuary Destination
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl text-olive-dark font-normal tracking-tight mb-3">
+                Visit Nikita Spa
+              </h2>
+              <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-light">
+                Your Relaxation Destination in Koramangala, Bengaluru.
               </p>
             </div>
 
-            <div className="rounded-3xl overflow-hidden border border-cream-dark shadow-soft bg-white">
-              <iframe
-                title="Nikita Spa Koramangala Map Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31107.03716611388!2d77.60831627581179!3d12.93519288258672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed898fc31%3A0x405597f1860f7238!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            <div className="bg-white rounded-3xl overflow-hidden border border-cream-dark shadow-soft">
+              <div className="relative w-full aspect-[16/9] min-h-[360px] sm:min-h-[450px]">
+                
+                {/* Clickable Location Card / Marker Overlay */}
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Nikita Spa coordinates on Google Maps"
+                  className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-2xl shadow-soft border border-cream-dark hover:border-gold/60 hover:shadow-premium transition-all duration-300 group flex items-center gap-3 text-left max-w-[calc(100%-2rem)] cursor-pointer"
+                >
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs border border-red-100">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 fill-red-500 text-red-600" />
+                  </div>
+                  <div className="min-w-0 pr-1">
+                    <div className="flex items-center gap-1 font-semibold text-charcoal text-xs sm:text-sm group-hover:text-gold transition-colors truncate">
+                      <span>Nikita Spa</span>
+                      <ExternalLink className="w-3 h-3 text-charcoal-muted group-hover:text-gold shrink-0" />
+                    </div>
+                    <p className="text-[11px] sm:text-xs text-charcoal-muted truncate">
+                      Koramangala, Bengaluru
+                    </p>
+                  </div>
+                </a>
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1795150229379!5m2!1sen!2sin!6m8!1m7!1sNqb-qpDDQKb6KE3Wv6XDbQ!2m2!1d12.93401024156366!2d77.63006964588301!3f227.39533733709914!4f36.89930718876852!5f0.7820865974627469"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Nikita Spa Google Maps Location"
+                  className="w-full h-full min-h-[360px] sm:min-h-[450px] border-0"
+                />
+              </div>
+
+              {/* Location details & Action Buttons */}
+              <div className="p-6 sm:p-8 bg-ivory/60 border-t border-cream-dark flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-gold block">
+                      Location Address
+                    </span>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-medium">
+                      <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                      Verified Business Location
+                    </span>
+                  </div>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-serif text-2xl font-medium text-olive-dark hover:text-gold transition-colors mb-1 inline-flex items-center gap-2 group cursor-pointer"
+                  >
+                    <span>Nikita Spa</span>
+                    <ExternalLink className="w-4 h-4 text-charcoal-muted group-hover:text-gold transition-colors" />
+                  </a>
+                  <p className="text-xs sm:text-sm text-charcoal-light flex items-center gap-1.5">
+                    <MapPin className="w-4 h-4 text-gold shrink-0" />
+                    <span>Koramangala, Bengaluru, Karnataka, India</span>
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="tel:9693264878"
+                    aria-label="Call Nikita Spa at 9693264878"
+                    className="py-3 px-5 rounded-2xl bg-cream hover:bg-cream-dark text-olive-dark text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-2 border border-cream-dark"
+                  >
+                    <Phone className="w-4 h-4 text-olive" />
+                    <span>Call Now</span>
+                  </a>
+
+                  <a
+                    href="https://wa.me/919693264878"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat on WhatsApp with Nikita Spa"
+                    className="py-3 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-2 shadow-soft"
+                  >
+                    <MessageSquare className="w-4 h-4 text-white" />
+                    <span>WhatsApp</span>
+                  </a>
+
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=12.93401024156366,77.63006964588301"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Get Directions to Nikita Spa on Google Maps"
+                    className="py-3 px-6 rounded-2xl bg-olive text-ivory text-xs sm:text-sm font-medium hover:bg-olive-light transition-colors inline-flex items-center gap-2 shadow-soft"
+                  >
+                    <Navigation className="w-4 h-4 text-gold" />
+                    <span>Get Directions</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
