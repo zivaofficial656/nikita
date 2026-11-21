@@ -141,7 +141,7 @@ export const HomePage: React.FC = () => {
               <div className="w-40 h-40 rounded-full border-2 border-gold-400/60 flex items-center justify-center p-2">
                 <div className="w-full h-full rounded-full bg-white flex flex-col items-center justify-center text-center p-3 border border-gold-300 shadow-xl overflow-hidden">
                   <img
-                    src="/images/Love Lady Heart Silhouette Logo.png"
+                    src="/images/nikita-spa-logo.png"
                     alt="Love"
                     className="w-20 h-20 object-contain object-center"
                   />

@@ -56,8 +56,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center group py-1" aria-label="Nikita Spa - Home">
             <img
-              src="/images/Elegant%20Nitiya%20Spa%20Logo%20with%20Lotus%20Accents.png"
-              alt="Nikita Spa Logo - Luxury Spa in Koramangala, Bengaluru"
+              src="/images/nikita-spa-logo.png"
+              alt="Nikita Spa Logo - Luxury Spa in Koramangala Bengaluru"
               width="180"
               height="48"
               className="h-10 sm:h-12 md:h-14 w-auto max-w-[150px] sm:max-w-[180px] md:max-w-[210px] object-contain transition-transform duration-300 group-hover:scale-105"

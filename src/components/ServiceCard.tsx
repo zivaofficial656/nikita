@@ -18,7 +18,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBookService
       <Link to={`/services/${service.id}`} className="relative h-60 sm:h-64 overflow-hidden bg-cream block">
         <img
           src={service.image}
-          alt={`${service.name} at Nikita Spa Koramangala`}
+          alt={service.imageAlt || `${service.name} at Nikita Spa Koramangala Bengaluru`}
+          width={service.imageWidth}
+          height={service.imageHeight}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           loading="lazy"
         />

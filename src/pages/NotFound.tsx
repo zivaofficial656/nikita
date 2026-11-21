@@ -49,7 +49,11 @@ export const NotFound: React.FC = () => {
           </div>
 
           <div className="mt-10 pt-8 border-t border-cream-dark flex items-center justify-center gap-6 text-xs text-charcoal-muted">
-            <a href="tel:9693264878" className="hover:text-olive-dark inline-flex items-center gap-1.5">
+            <a 
+              href="tel:+919693264878" 
+              aria-label="Call Nikita Spa Front Desk at +91 9693264878"
+              className="hover:text-olive-dark inline-flex items-center gap-1.5"
+            >
               <Phone className="w-3.5 h-3.5 text-olive" />
               <span>Call Front Desk</span>
             </a>

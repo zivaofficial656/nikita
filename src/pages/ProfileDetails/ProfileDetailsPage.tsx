@@ -158,7 +158,7 @@ export const ProfileDetailsPage: React.FC = () => {
           <div className="bg-ivory-100 rounded-3xl p-5 border border-gold-300 space-y-2">
             <div className="flex items-center gap-2 text-xs font-bold text-burgundy uppercase tracking-wider">
               <img
-                src="/images/Love Lady Heart Silhouette Logo.png"
+                src="/images/nikita-spa-logo.png"
                 alt="Love"
                 className="w-5 h-5 object-contain object-center"
               />

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { FloatingContactButtons } from './components/FloatingContactButtons';
 import { MobileBottomBar } from './components/MobileBottomBar';
 import { AppointmentModal } from './components/AppointmentModal';
 import { Home } from './pages/Home';
@@ -98,8 +98,8 @@ export function App() {
         initialServiceId={selectedServiceForBooking}
       />
 
-      {/* Floating WhatsApp CTA Widget */}
-      <FloatingWhatsApp />
+      {/* Floating Call & WhatsApp Action Buttons */}
+      <FloatingContactButtons />
 
       {/* Mobile Sticky Booking Bar */}
       <MobileBottomBar onOpenBooking={() => handleOpenBooking()} />

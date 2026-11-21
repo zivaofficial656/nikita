@@ -15,7 +15,7 @@ export const AboutPage: React.FC = () => {
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-gold-400 text-black text-xs font-bold uppercase tracking-wider shadow-sm">
             <img
-              src="/images/Love Lady Heart Silhouette Logo.png"
+              src="/images/nikita-spa-logo.png"
               alt="Love"
               className="w-5 h-5 object-contain object-center"
             />

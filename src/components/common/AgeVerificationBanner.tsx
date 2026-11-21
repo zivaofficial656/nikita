@@ -30,7 +30,7 @@ export const AgeVerificationBanner: React.FC = () => {
         <div className="flex items-center gap-3.5 mb-5 mt-1">
           <div className="w-14 h-14 rounded-full bg-white border border-gold-400 p-1 flex items-center justify-center flex-shrink-0 shadow-md overflow-hidden">
             <img
-              src="/images/Love Lady Heart Silhouette Logo.png"
+              src="/images/nikita-spa-logo.png"
               alt="Love"
               className="w-full h-full object-contain object-center"
             />

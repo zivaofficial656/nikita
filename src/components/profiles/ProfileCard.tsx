@@ -39,7 +39,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ companion, className =
             )}
             <span className="px-2 py-0.5 rounded-full bg-burgundy/95 backdrop-blur-md border border-gold-400/70 text-gold-300 font-bold tracking-wider uppercase text-[9px] flex items-center gap-1">
               <img
-                src="/images/Love Lady Heart Silhouette Logo.png"
+                src="/images/nikita-spa-logo.png"
                 alt="Love"
                 className="w-3 h-3 object-contain object-center"
               />

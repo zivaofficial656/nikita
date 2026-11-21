@@ -94,9 +94,9 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ onBookService }) =
                 <div className="relative rounded-3xl overflow-hidden shadow-soft border border-cream-dark bg-white aspect-[4/3] group">
                   <img
                     src={service.image}
-                    alt={`${service.name} treatment at Nikita Spa Koramangala`}
-                    width="800"
-                    height="600"
+                    alt={service.imageAlt || `${service.name} therapy at Nikita Spa Koramangala Bengaluru`}
+                    width={service.imageWidth}
+                    height={service.imageHeight}
                     loading="eager"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -180,8 +180,9 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ onBookService }) =
                   </a>
 
                   <a
-                    href="tel:9693264878"
+                    href="tel:+919693264878"
                     onClick={handleCall}
+                    aria-label="Call Nikita Spa at +91 9693264878"
                     className="py-3.5 px-5 rounded-full bg-cream hover:bg-cream-dark text-olive-dark text-xs sm:text-sm font-medium transition-colors border border-cream-dark flex items-center gap-2"
                   >
                     <Phone className="w-4 h-4 text-olive" />
@@ -225,9 +226,9 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ onBookService }) =
                     <div className="h-44 rounded-2xl overflow-hidden relative">
                       <img
                         src={rel.image}
-                        alt={`${rel.name} at Nikita Spa Bengaluru`}
-                        width="400"
-                        height="250"
+                        alt={rel.imageAlt || `${rel.name} at Nikita Spa Bengaluru`}
+                        width={rel.imageWidth}
+                        height={rel.imageHeight}
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />

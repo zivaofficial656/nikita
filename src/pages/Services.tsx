@@ -122,7 +122,9 @@ export const Services: React.FC<ServicesProps> = ({ onBookService }) => {
                         <div className="rounded-2xl overflow-hidden relative h-64 sm:h-80 shadow-soft">
                           <img
                             src={service.image}
-                            alt={`${service.name} at Nikita Spa Koramangala`}
+                            alt={service.imageAlt || `${service.name} at Nikita Spa Koramangala Bengaluru`}
+                            width={service.imageWidth}
+                            height={service.imageHeight}
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                             loading="lazy"
                           />

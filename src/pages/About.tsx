@@ -87,8 +87,11 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
               <div className="lg:col-span-6 relative">
                 <div className="rounded-3xl overflow-hidden shadow-elevated border border-cream-dark">
                   <img
-                    src="/images/n2.webp"
-                    alt="Nikita Spa Interior Ambience and Jacuzzi Suite"
+                    src="/images/luxury-couple-spa-suite-koramangala.webp"
+                    alt="Panoramic view of luxury couple massage suite and private jacuzzi at Nikita Spa Koramangala Bengaluru"
+                    width="1360"
+                    height="635"
+                    loading="lazy"
                     className="w-full h-[450px] object-cover"
                   />
                 </div>

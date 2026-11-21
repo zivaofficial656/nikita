@@ -18,8 +18,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <Link to="/" className="inline-block group">
               <div className="bg-ivory/95 p-2.5 rounded-2xl inline-block shadow-soft border border-cream-dark/20 transition-transform duration-300 group-hover:scale-105">
                 <img
-                  src="/images/Elegant%20Nitiya%20Spa%20Logo%20with%20Lotus%20Accents.png"
-                  alt="Nikita Spa Logo"
+                  src="/images/nikita-spa-logo.png"
+                  alt="Nikita Spa Logo - Koramangala Bengaluru"
                   width="180"
                   height="50"
                   loading="lazy"

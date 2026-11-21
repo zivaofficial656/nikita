@@ -51,7 +51,9 @@ export const GallerySection: React.FC = () => {
               <div className="h-72 sm:h-80 overflow-hidden relative">
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={item.alt || item.title}
+                  width={item.width}
+                  height={item.height}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
@@ -103,7 +105,9 @@ export const GallerySection: React.FC = () => {
             <div className="max-h-[75vh] overflow-hidden bg-charcoal">
               <img
                 src={activeImage.image}
-                alt={activeImage.title}
+                alt={activeImage.alt || activeImage.title}
+                width={activeImage.width}
+                height={activeImage.height}
                 className="w-full h-full object-contain max-h-[75vh]"
               />
             </div>

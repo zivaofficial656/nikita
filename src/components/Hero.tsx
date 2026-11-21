@@ -12,8 +12,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       {/* Background imagery with sophisticated warm gradient overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/n15.webp"
-          alt="Nikita Spa Koramangala Luxury Interior Suite"
+          src="/images/couple-spa-room-jacuzzi-koramangala.webp"
+          alt="Nikita Spa luxury couple treatment room with private jacuzzi in Koramangala Bengaluru"
           width="1360"
           height="628"
           fetchPriority="high"

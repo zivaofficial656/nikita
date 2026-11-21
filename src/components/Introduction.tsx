@@ -16,8 +16,8 @@ export const Introduction: React.FC<IntroductionProps> = ({ onOpenBooking }) => 
           <div className="lg:col-span-5 relative">
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-elevated border border-cream-dark">
               <img
-                src="/images/n4.webp"
-                alt="Nikita Spa circular luxury suite in Koramangala"
+                src="/images/circular-bed-therapy-suite-bengaluru.webp"
+                alt="Signature circular massage bed in luxury suite at Nikita Spa Koramangala Bengaluru"
                 width="1360"
                 height="628"
                 className="w-full h-[460px] sm:h-[540px] object-cover object-center hover:scale-105 transition-transform duration-700"

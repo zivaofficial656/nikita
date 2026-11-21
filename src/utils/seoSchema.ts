@@ -13,11 +13,11 @@ export const getLocalBusinessSchema = () => ({
   name: 'Nikita Spa',
   alternateName: 'Nikita Spa Koramangala Bengaluru',
   url: `${CANONICAL_DOMAIN}/`,
-  logo: `${CANONICAL_DOMAIN}/images/Elegant%20Nitiya%20Spa%20Logo%20with%20Lotus%20Accents.png`,
+  logo: `${CANONICAL_DOMAIN}/images/nikita-spa-logo.png`,
   image: [
     `${CANONICAL_DOMAIN}/images/og-image.jpg`,
-    `${CANONICAL_DOMAIN}/images/n15.webp`,
-    `${CANONICAL_DOMAIN}/images/n13.webp`
+    `${CANONICAL_DOMAIN}/images/couple-spa-room-jacuzzi-koramangala.webp`,
+    `${CANONICAL_DOMAIN}/images/body-massage-spa-room-bengaluru.webp`
   ],
   telephone: '+919693264878',
   email: 'contact@nikita.online',

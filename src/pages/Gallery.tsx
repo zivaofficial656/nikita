@@ -85,7 +85,9 @@ export const Gallery: React.FC = () => {
                   <div className="h-80 overflow-hidden relative">
                     <img
                       src={img.image}
-                      alt={img.title}
+                      alt={img.alt || img.title}
+                      width={img.width}
+                      height={img.height}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
@@ -136,7 +138,9 @@ export const Gallery: React.FC = () => {
             <div className="max-h-[75vh] overflow-hidden bg-charcoal">
               <img
                 src={modalImage.image}
-                alt={modalImage.title}
+                alt={modalImage.alt || modalImage.title}
+                width={modalImage.width}
+                height={modalImage.height}
                 className="w-full h-full object-contain max-h-[75vh]"
               />
             </div>

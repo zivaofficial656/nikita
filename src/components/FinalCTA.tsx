@@ -12,8 +12,12 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking }) => {
       {/* Decorative background ambiance */}
       <div className="absolute inset-0 z-0 opacity-15">
         <img
-          src="/images/n3.webp"
-          alt="Nikita Spa Relaxing Atmosphere in Koramangala"
+          src="/images/private-hydrotherapy-suite-bengaluru.webp"
+          alt=""
+          role="presentation"
+          width="1360"
+          height="635"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
       </div>

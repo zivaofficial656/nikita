@@ -378,9 +378,9 @@ export const Contact: React.FC = () => {
 
                 <div className="flex flex-wrap items-center gap-3">
                   <a
-                    href="tel:9693264878"
+                    href="tel:+919693264878"
                     onClick={() => trackCallClick('contact_page_map')}
-                    aria-label="Call Nikita Spa at 9693264878"
+                    aria-label="Call Nikita Spa at +91 9693264878"
                     className="py-3 px-5 rounded-2xl bg-cream hover:bg-cream-dark text-olive-dark text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-2 border border-cream-dark"
                   >
                     <Phone className="w-4 h-4 text-olive" />

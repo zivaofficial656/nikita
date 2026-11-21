@@ -92,7 +92,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           <div className="text-center py-8">
             <div className="w-16 h-16 rounded-full bg-white border border-gold-400 p-1 flex items-center justify-center mx-auto mb-4 shadow-md overflow-hidden">
               <img
-                src="/images/Love Lady Heart Silhouette Logo.png"
+                src="/images/nikita-spa-logo.png"
                 alt="Love"
                 className="w-full h-full object-contain object-center"
               />
@@ -125,7 +125,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <div className="mb-6 flex items-start gap-3.5">
               <div className="w-12 h-12 rounded-full bg-white border border-gold-400 p-0.5 flex items-center justify-center flex-shrink-0 shadow-sm overflow-hidden mt-0.5">
                 <img
-                  src="/images/Love Lady Heart Silhouette Logo.png"
+                  src="/images/nikita-spa-logo.png"
                   alt="Love"
                   className="w-full h-full object-contain object-center"
                 />

@@ -42,7 +42,7 @@ export const FloatingContactDock: React.FC = () => {
             aria-label="Book Online Enquiry"
           >
             <img
-              src="/images/Love Lady Heart Silhouette Logo.png"
+              src="/images/nikita-spa-logo.png"
               alt="Love"
               className="w-full h-full object-contain object-center"
             />

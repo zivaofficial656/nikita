@@ -18,7 +18,7 @@ export const HeroSection: React.FC = () => {
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-gold-400 text-black text-xs font-semibold tracking-wider uppercase shadow-sm">
               <img
-                src="/images/Love Lady Heart Silhouette Logo.png"
+                src="/images/nikita-spa-logo.png"
                 alt="Love"
                 className="w-5 h-5 object-contain object-center"
               />
@@ -85,7 +85,7 @@ export const HeroSection: React.FC = () => {
                 {/* Top Badge */}
                 <div className="absolute top-4 right-4 px-3.5 py-1.5 rounded-full bg-black/85 backdrop-blur-md border border-gold-400 text-xs font-semibold text-gold-300 flex items-center gap-2 shadow-md">
                   <img
-                    src="/images/Love Lady Heart Silhouette Logo.png"
+                    src="/images/nikita-spa-logo.png"
                     alt="Love"
                     className="w-4 h-4 object-contain object-center"
                   />

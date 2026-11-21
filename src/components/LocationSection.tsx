@@ -93,9 +93,9 @@ export const LocationSection: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
-                  href="tel:9693264878"
+                  href="tel:+919693264878"
                   onClick={() => trackCallClick('location_section')}
-                  aria-label="Call Nikita Spa at 9693264878"
+                  aria-label="Call Nikita Spa at +91 9693264878"
                   className="py-3 px-4 rounded-2xl bg-cream hover:bg-cream-dark text-olive-dark text-xs sm:text-sm font-medium transition-colors text-center flex items-center justify-center gap-2 border border-cream-dark"
                 >
                   <Phone className="w-4 h-4 text-olive" />

@@ -15,7 +15,7 @@ export const ContactCTA: React.FC<ContactCTAProps> = ({ onOpenEnquiry }) => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold-400/50 text-gold-300 text-xs font-semibold uppercase tracking-widest mb-6">
           <img
-            src="/images/Love Lady Heart Silhouette Logo.png"
+            src="/images/nikita-spa-logo.png"
             alt="Love"
             className="w-5 h-5 object-contain object-center"
           />

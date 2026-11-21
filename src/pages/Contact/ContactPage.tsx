@@ -25,7 +25,7 @@ export const ContactPage: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white border border-gold-400 p-0.5 flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0">
                 <img
-                  src="/images/Love Lady Heart Silhouette Logo.png"
+                  src="/images/nikita-spa-logo.png"
                   alt="Love"
                   className="w-full h-full object-contain object-center"
                 />

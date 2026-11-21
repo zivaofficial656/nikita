@@ -7,6 +7,9 @@ export interface ServiceItem {
   recommendedFor: string;
   durationOptions: string[];
   image: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
   tag: string;
 }
 
@@ -24,7 +27,10 @@ export const servicesData: ServiceItem[] = [
     ],
     recommendedFor: 'Individuals experiencing overall fatigue, work-related stress, or seeking comprehensive bodily renewal.',
     durationOptions: ['60 Minutes', '90 Minutes'],
-    image: '/images/n13.webp',
+    image: '/images/body-massage-spa-room-bengaluru.webp',
+    imageAlt: 'Private full body massage suite with ambient under-bed lighting at Nikita Spa Bengaluru',
+    imageWidth: 1360,
+    imageHeight: 628,
     tag: 'Signature Experience'
   },
   {
@@ -40,7 +46,10 @@ export const servicesData: ServiceItem[] = [
     ],
     recommendedFor: 'First-time spa visitors, professionals seeking mild-to-moderate pressure, and deep relaxation.',
     durationOptions: ['60 Minutes', '90 Minutes'],
-    image: '/images/n20.webp',
+    image: '/images/swedish-massage-room-bengaluru.webp',
+    imageAlt: 'Swedish massage therapy room with calming floral ceiling design at Nikita Spa Bengaluru',
+    imageWidth: 471,
+    imageHeight: 1020,
     tag: 'Classic Relaxation'
   },
   {
@@ -56,7 +65,10 @@ export const servicesData: ServiceItem[] = [
     ],
     recommendedFor: 'Desk workers, athletes, and anyone enduring chronic back, shoulder, or neck stiffness.',
     durationOptions: ['60 Minutes', '90 Minutes'],
-    image: '/images/n7.webp',
+    image: '/images/deep-tissue-massage-suite-koramangala.webp',
+    imageAlt: 'Deep tissue massage suite with attached private glass shower cubicle at Nikita Spa Koramangala',
+    imageWidth: 1360,
+    imageHeight: 628,
     tag: 'Therapeutic Tension Relief'
   },
   {
@@ -72,7 +84,10 @@ export const servicesData: ServiceItem[] = [
     ],
     recommendedFor: 'Those who enjoy active stretching, improved mobility, and energetic revitalization.',
     durationOptions: ['60 Minutes', '90 Minutes'],
-    image: '/images/n11.webp',
+    image: '/images/thai-massage-platform-suite-koramangala.webp',
+    imageAlt: 'Thai massage platform bed with tranquil blue mood lighting at Nikita Spa Koramangala',
+    imageWidth: 476,
+    imageHeight: 1020,
     tag: 'Ancient Mobility'
   },
   {
@@ -88,7 +103,10 @@ export const servicesData: ServiceItem[] = [
     ],
     recommendedFor: 'Anyone suffering from sensory burnout, sleep disturbances, or longing for emotional calm.',
     durationOptions: ['60 Minutes', '90 Minutes'],
-    image: '/images/n8.webp',
+    image: '/images/aromatherapy-massage-room-bengaluru.webp',
+    imageAlt: 'Aromatherapy massage suite with tranquil ambient lighting at Nikita Spa Bengaluru',
+    imageWidth: 471,
+    imageHeight: 1020,
     tag: 'Aromatic Sensory'
   },
   {
@@ -104,7 +122,10 @@ export const servicesData: ServiceItem[] = [
     ],
     recommendedFor: 'Couples, anniversaries, celebrations, or friends wishing to unwind together in serene privacy.',
     durationOptions: ['60 Minutes', '90 Minutes'],
-    image: '/images/n15.webp',
+    image: '/images/couple-spa-room-jacuzzi-koramangala.webp',
+    imageAlt: 'Private couple massage suite with twin beds and hydrotherapy jacuzzi at Nikita Spa Koramangala',
+    imageWidth: 1360,
+    imageHeight: 628,
     tag: 'Romantic Sanctuary'
   },
   {
@@ -120,7 +141,10 @@ export const servicesData: ServiceItem[] = [
     ],
     recommendedFor: 'Busy executives, caregivers, and anyone in need of quiet restorative downtime.',
     durationOptions: ['60 Minutes', '90 Minutes'],
-    image: '/images/n18.webp',
+    image: '/images/spa-hydrotherapy-jacuzzi-ritual-koramangala.webp',
+    imageAlt: 'Relaxation therapy hydrotherapy jacuzzi bath ritual at Nikita Spa Koramangala Bengaluru',
+    imageWidth: 488,
+    imageHeight: 1020,
     tag: 'Restorative Care'
   }
 ];

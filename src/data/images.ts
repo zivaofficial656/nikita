@@ -1,163 +1,105 @@
 /**
- * Centralized Image Configuration for Love
- * All assets reference local files from /public/images/
+ * Centralized Image Configuration for Nikita Spa
+ * Location: Koramangala, Bengaluru, Karnataka, India
+ * All assets reference verified local WebP and PNG files from /public/images/
  */
 
-export const BRAND_LOGO = '/images/Love Lady Heart Silhouette Logo.png';
+export const BRAND_LOGO_PNG = '/images/nikita-spa-logo.png';
+export const BRAND_LOGO_WEBP = '/images/nikita-spa-logo.webp';
+export const OG_IMAGE_JPG = '/images/og-image.jpg';
+export const OG_IMAGE_WEBP = '/images/og-image.webp';
+
+const defaultImg = '/images/couple-spa-room-jacuzzi-koramangala.webp';
 
 export const siteImages = {
   // Brand Identity
-  logo: BRAND_LOGO,
+  logo: BRAND_LOGO_PNG,
+  logoWebp: BRAND_LOGO_WEBP,
+  ogImage: OG_IMAGE_JPG,
+  ogImageWebp: OG_IMAGE_WEBP,
 
-  // Hero & Editorial Spotlights
-  hero: '/images/s63.jpg',
-  about: '/images/s58.jpg',
-  spotlight: '/images/s40.jpg',
+  // Key Section Showcases
+  hero: '/images/couple-spa-room-jacuzzi-koramangala.webp',
+  introduction: '/images/circular-bed-therapy-suite-bengaluru.webp',
+  about: '/images/luxury-couple-spa-suite-koramangala.webp',
+  finalCta: '/images/private-hydrotherapy-suite-bengaluru.webp',
 
-  // Featured Companion Profiles
-  companions: {
-    aanya: {
-      primary: '/images/s63.jpg',
-      gallery: ['/images/s63.jpg', '/images/s2.jpg', '/images/s3.jpg', '/images/s4.jpg'],
-    },
-    mira: {
-      primary: '/images/s27.jpg',
-      gallery: ['/images/s27.jpg', '/images/s28.jpg', '/images/s29.jpg', '/images/s30.jpg'],
-    },
-    suhana: {
-      primary: '/images/s40.jpg',
-      gallery: ['/images/s40.jpg', '/images/s33.jpg', '/images/s34.jpg', '/images/s35.jpg'],
-    },
-    rhea: {
-      primary: '/images/s46.jpg',
-      gallery: ['/images/s46.jpg', '/images/s47.jpg', '/images/s48.jpg', '/images/s49.jpg'],
-    },
-    tara: {
-      primary: '/images/s51.jpg',
-      gallery: ['/images/s51.jpg', '/images/s52.jpg', '/images/s53.jpg', '/images/s55.jpg'],
-    },
-    kavya: {
-      primary: '/images/s56.jpg',
-      gallery: ['/images/s56.jpg', '/images/s57.jpg', '/images/s59.jpg', '/images/s60.jpg'],
-    },
-    natasha: {
-      primary: '/images/s65.jpg',
-      gallery: ['/images/s65.jpg', '/images/s64.jpg', '/images/s62.jpg', '/images/s66.jpg'],
-    },
-    ananya: {
-      primary: '/images/s43.jpg',
-      gallery: ['/images/s43.jpg', '/images/s39.jpg', '/images/s41.jpg', '/images/s42.jpg'],
-    },
-  },
-
-  // Companionship Categories
-  categories: {
-    independent: '/images/s21.jpg',
-    social: '/images/s20.jpg',
-    travel: '/images/s14.jpg',
-    dinner: '/images/s16.jpg',
-    event: '/images/s17.jpg',
-    professional: '/images/s15.jpg',
-  },
-
-  // Bangalore Enclaves & Locations
-  locations: {
-    indiranagar: '/images/s5.jpg',
-    koramangala: '/images/s6.jpg',
-    hsrLayout: '/images/s7.jpg',
-    whitefield: '/images/s8.jpg',
-    mgRoad: '/images/s9.jpg',
-    jayanagar: '/images/s10.jpg',
-    marathahalli: '/images/s12.jpg',
-    electronicCity: '/images/s13.jpg',
-  },
-
-  // Bespoke Services
+  // Genuine Spa Services
   services: {
-    fineDining: '/images/s18.jpg',
-    socialGalas: '/images/s19.jpg',
-    corporateHospitality: '/images/s22.jpg',
-    culturalHeritage: '/images/s23.jpg',
-    weekendRetreats: '/images/s24.jpg',
-    privateCelebrations: '/images/s25.jpg',
+    fullBodyMassage: '/images/body-massage-spa-room-bengaluru.webp',
+    swedishMassage: '/images/swedish-massage-room-bengaluru.webp',
+    deepTissueMassage: '/images/deep-tissue-massage-suite-koramangala.webp',
+    thaiMassage: '/images/thai-massage-platform-suite-koramangala.webp',
+    aromatherapyMassage: '/images/aromatherapy-massage-room-bengaluru.webp',
+    coupleMassage: '/images/couple-spa-room-jacuzzi-koramangala.webp',
+    relaxationTherapy: '/images/spa-hydrotherapy-jacuzzi-ritual-koramangala.webp',
+    fineDining: defaultImg,
+    socialGalas: defaultImg,
+    corporateHospitality: defaultImg,
+    culturalHeritage: defaultImg,
+    weekendRetreats: defaultImg,
+    privateCelebrations: defaultImg,
   },
 
-  // Editorial Guides
+  // Complete Gallery Showcase
+  gallery: [
+    '/images/couple-spa-room-jacuzzi-koramangala.webp',
+    '/images/circular-bed-therapy-suite-bengaluru.webp',
+    '/images/in-suite-jacuzzi-relaxation-lounge-bengaluru.webp',
+    '/images/spa-hydrotherapy-jacuzzi-ritual-koramangala.webp',
+    '/images/couple-massage-room-swan-art-koramangala.webp',
+    '/images/body-massage-spa-room-bengaluru.webp',
+    '/images/spa-vanity-gold-basin-amenities-bengaluru.webp',
+    '/images/aromatherapy-massage-room-bengaluru.webp',
+    '/images/deep-tissue-massage-suite-koramangala.webp',
+    '/images/twin-massage-suite-ambient-glow-koramangala.webp',
+    '/images/thai-massage-platform-suite-koramangala.webp',
+    '/images/private-shower-dressing-corner-koramangala.webp',
+    '/images/dual-therapy-room-fresh-linens-koramangala.webp',
+    '/images/swedish-massage-room-bengaluru.webp',
+    '/images/twin-treatment-suite-vanity-mirror-koramangala.webp',
+    '/images/luxury-couple-spa-suite-koramangala.webp',
+    '/images/spa-treatment-room-circular-layout-bengaluru.webp',
+    '/images/spa-relaxation-room-evening-ambiance-bengaluru.webp',
+    '/images/private-hydrotherapy-suite-bengaluru.webp',
+    '/images/nikita-spa-aromatherapy-preparation-tray.webp',
+  ],
+
+  // Fallbacks for legacy template files
+  spotlight: defaultImg,
+  companions: {
+    aanya: { primary: defaultImg, gallery: [defaultImg] },
+    mira: { primary: defaultImg, gallery: [defaultImg] },
+    suhana: { primary: defaultImg, gallery: [defaultImg] },
+    rhea: { primary: defaultImg, gallery: [defaultImg] },
+    tara: { primary: defaultImg, gallery: [defaultImg] },
+    kavya: { primary: defaultImg, gallery: [defaultImg] },
+    natasha: { primary: defaultImg, gallery: [defaultImg] },
+    ananya: { primary: defaultImg, gallery: [defaultImg] },
+  },
+  categories: {
+    independent: defaultImg,
+    social: defaultImg,
+    travel: defaultImg,
+    dinner: defaultImg,
+    event: defaultImg,
+    professional: defaultImg,
+  },
+  locations: {
+    indiranagar: defaultImg,
+    koramangala: defaultImg,
+    hsrLayout: defaultImg,
+    whitefield: defaultImg,
+    mgRoad: defaultImg,
+    jayanagar: defaultImg,
+    marathahalli: defaultImg,
+    electronicCity: defaultImg,
+  },
   guides: {
-    fineDiningEtiquette: '/images/s26.jpg',
-    corporateConventions: '/images/s31.jpg',
-    luxuryRetreats: '/images/s32.jpg',
-    safetyStandards: '/images/s36.jpg',
+    fineDiningEtiquette: defaultImg,
+    corporateConventions: defaultImg,
+    luxuryRetreats: defaultImg,
+    safetyStandards: defaultImg,
   },
-
-  // Additional Local Roster Images (for extended gallery/roster)
-  allAvailableImages: [
-    '/images/kolkata-fun-club-indian-escort-in-kolkata-9360886_original.jpg',
-    '/images/ravina-escort-in-kolkata-12363844_original.jpg',
-    '/images/s1.webp',
-    '/images/s2.jpg',
-    '/images/s3.jpg',
-    '/images/s4.jpg',
-    '/images/s5.jpg',
-    '/images/s6.jpg',
-    '/images/s7.jpg',
-    '/images/s8.jpg',
-    '/images/s9.jpg',
-    '/images/s10.jpg',
-    '/images/s12.jpg',
-    '/images/s13.jpg',
-    '/images/s14.jpg',
-    '/images/s15.jpg',
-    '/images/s16.jpg',
-    '/images/s17.jpg',
-    '/images/s18.jpg',
-    '/images/s19.jpg',
-    '/images/s20.jpg',
-    '/images/s21.jpg',
-    '/images/s22.jpg',
-    '/images/s23.jpg',
-    '/images/s24.jpg',
-    '/images/s25.jpg',
-    '/images/s26.jpg',
-    '/images/s27.jpg',
-    '/images/s28.jpg',
-    '/images/s29.jpg',
-    '/images/s30.jpg',
-    '/images/s31.jpg',
-    '/images/s32.jpg',
-    '/images/s33.jpg',
-    '/images/s34.jpg',
-    '/images/s35.jpg',
-    '/images/s36.jpg',
-    '/images/s37.jpg',
-    '/images/s38.jpg',
-    '/images/s39.jpg',
-    '/images/s40.jpg',
-    '/images/s41.jpg',
-    '/images/s42.jpg',
-    '/images/s43.jpg',
-    '/images/s44.jpg',
-    '/images/s45.jpg',
-    '/images/s46.jpg',
-    '/images/s47.jpg',
-    '/images/s48.jpg',
-    '/images/s49.jpg',
-    '/images/s50.jpg',
-    '/images/s51.jpg',
-    '/images/s52.jpg',
-    '/images/s53.jpg',
-    '/images/s55.jpg',
-    '/images/s56.jpg',
-    '/images/s57.jpg',
-    '/images/s58.jpg',
-    '/images/s59.jpg',
-    '/images/s60.jpg',
-    '/images/s61.jpg',
-    '/images/s62.jpg',
-    '/images/s63.jpg',
-    '/images/s64.jpg',
-    '/images/s65.jpg',
-    '/images/s66.jpg',
-    '/images/s67.jpg',
-  ]
+  allAvailableImages: [defaultImg],
 };

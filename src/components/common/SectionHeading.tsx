@@ -29,7 +29,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         <div className="flex items-center gap-2 mb-3">
           <span className="w-5 h-[1px] bg-gold-500"></span>
           <img
-            src="/images/Love Lady Heart Silhouette Logo.png"
+            src="/images/nikita-spa-logo.png"
             alt="Love"
             className="w-3.5 h-3.5 object-contain object-center inline-block"
           />

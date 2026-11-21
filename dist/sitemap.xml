@@ -1,23 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Core Pages -->
   <url>
     <loc>https://nikita.online/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/couple-spa-room-jacuzzi-koramangala.webp</image:loc>
+      <image:title>Nikita Spa Luxury Couple Treatment Room &amp; Jacuzzi in Koramangala Bengaluru</image:title>
+      <image:caption>Executive couple sanctuary suite featuring twin massage beds and private hydrotherapy jacuzzi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/circular-bed-therapy-suite-bengaluru.webp</image:loc>
+      <image:title>Signature Circular Massage Bed at Nikita Spa Koramangala</image:title>
+      <image:caption>Private circular therapy bed with blue ambient ceiling cove and botanical wellness oils</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/nikita-spa-logo.png</image:loc>
+      <image:title>Nikita Spa Official Brand Logo Koramangala Bengaluru</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://nikita.online/about</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/luxury-couple-spa-suite-koramangala.webp</image:loc>
+      <image:title>Panoramic Luxury Couple Massage Suite at Nikita Spa Koramangala Bengaluru</image:title>
+      <image:caption>Tranquil wellness interior with private jacuzzi, twin therapy beds, and soothing ambiance</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://nikita.online/services</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/body-massage-spa-room-bengaluru.webp</image:loc>
+      <image:title>Full Body Massage Treatment Room at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/swedish-massage-room-bengaluru.webp</image:loc>
+      <image:title>Swedish Massage Single Suite with Floral Ceiling at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/deep-tissue-massage-suite-koramangala.webp</image:loc>
+      <image:title>Deep Tissue Massage Suite with Ensuite Shower at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/thai-massage-platform-suite-koramangala.webp</image:loc>
+      <image:title>Thai Massage Platform Bed Suite with Ambient Glow at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/aromatherapy-massage-room-bengaluru.webp</image:loc>
+      <image:title>Aromatherapy Massage Suite with Blue Ambient Lighting at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/couple-spa-room-jacuzzi-koramangala.webp</image:loc>
+      <image:title>Couple Massage Suite with Hydrotherapy Jacuzzi at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/spa-hydrotherapy-jacuzzi-ritual-koramangala.webp</image:loc>
+      <image:title>Relaxation Therapy Hydrotherapy Jacuzzi Ritual at Nikita Spa Koramangala</image:title>
+    </image:image>
   </url>
   
   <!-- Individual Service Detail Pages -->
@@ -26,65 +76,193 @@
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/body-massage-spa-room-bengaluru.webp</image:loc>
+      <image:title>Full Body Massage Suite with Ambient Under-Bed Glow at Nikita Spa Bengaluru</image:title>
+      <image:caption>Full body therapeutic massage table prepared with clean linens and aromatherapy essences</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://nikita.online/services/swedish-massage</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/swedish-massage-room-bengaluru.webp</image:loc>
+      <image:title>Swedish Massage Therapy Room with Floral Ceiling at Nikita Spa Bengaluru</image:title>
+      <image:caption>Gentle Swedish relaxation therapy suite with soft lighting and sanitized linens</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://nikita.online/services/deep-tissue-massage</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/deep-tissue-massage-suite-koramangala.webp</image:loc>
+      <image:title>Deep Tissue Massage Room with Attached Glass Shower at Nikita Spa Koramangala</image:title>
+      <image:caption>Private firm-pressure massage suite equipped with attached glass shower cubicle</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://nikita.online/services/thai-massage</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/thai-massage-platform-suite-koramangala.webp</image:loc>
+      <image:title>Thai Massage Platform Bed Suite with Ambient LED at Nikita Spa Koramangala</image:title>
+      <image:caption>Supportive Thai mobility and stretching platform with calming blue mood illumination</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://nikita.online/services/aromatherapy-massage</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/aromatherapy-massage-room-bengaluru.webp</image:loc>
+      <image:title>Aromatherapy Massage Suite with Mood Cove Lighting at Nikita Spa Bengaluru</image:title>
+      <image:caption>Sensory botanical massage suite with customized essential oils and tranquil blue cove lighting</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://nikita.online/services/couple-massage</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/couple-spa-room-jacuzzi-koramangala.webp</image:loc>
+      <image:title>Executive Couple Massage Suite with Jacuzzi at Nikita Spa Koramangala Bengaluru</image:title>
+      <image:caption>Synchronized dual massage retreat suite with private hydrotherapy jacuzzi and swan towel art</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://nikita.online/services/relaxation-therapy</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/spa-hydrotherapy-jacuzzi-ritual-koramangala.webp</image:loc>
+      <image:title>Relaxation Therapy Hydrotherapy Jacuzzi Bath at Nikita Spa Koramangala</image:title>
+      <image:caption>Soothing warm hydro-massage bath for stress reduction and autonomic nervous system renewal</image:caption>
+    </image:image>
   </url>
 
-  <!-- Experience & Contact -->
+  <!-- Gallery Page -->
   <url>
     <loc>https://nikita.online/gallery</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/couple-spa-room-jacuzzi-koramangala.webp</image:loc>
+      <image:title>Executive Couple Sanctuary &amp; Jacuzzi at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/circular-bed-therapy-suite-bengaluru.webp</image:loc>
+      <image:title>Signature Circular Therapy Suite at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/in-suite-jacuzzi-relaxation-lounge-bengaluru.webp</image:loc>
+      <image:title>In-Suite Jacuzzi &amp; Relaxation Armchairs at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/spa-hydrotherapy-jacuzzi-ritual-koramangala.webp</image:loc>
+      <image:title>Hydrotherapy Jacuzzi Ritual at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/couple-massage-room-swan-art-koramangala.webp</image:loc>
+      <image:title>Couple Massage Suite with Decorative Swan Towel Art at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/body-massage-spa-room-bengaluru.webp</image:loc>
+      <image:title>Private Suite with Under-Bed LED Glow at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/spa-vanity-gold-basin-amenities-bengaluru.webp</image:loc>
+      <image:title>Gold Basin Vanity &amp; Refreshment Station at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/aromatherapy-massage-room-bengaluru.webp</image:loc>
+      <image:title>Mood Therapy Ambient Lighting at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/deep-tissue-massage-suite-koramangala.webp</image:loc>
+      <image:title>En-Suite Therapy Suite with Glass Shower at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/twin-massage-suite-ambient-glow-koramangala.webp</image:loc>
+      <image:title>Twin Bed Suite with Ambient Glow at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/thai-massage-platform-suite-koramangala.webp</image:loc>
+      <image:title>Tranquil Blue LED Platform Bed at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/private-shower-dressing-corner-koramangala.webp</image:loc>
+      <image:title>Private Shower &amp; Dressing Corner at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/dual-therapy-room-fresh-linens-koramangala.webp</image:loc>
+      <image:title>Dual Treatment Suite with Linens at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/swedish-massage-room-bengaluru.webp</image:loc>
+      <image:title>Floral Ceiling Single Therapy Room at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/twin-treatment-suite-vanity-mirror-koramangala.webp</image:loc>
+      <image:title>Twin Therapy Suite Mirror View at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/luxury-couple-spa-suite-koramangala.webp</image:loc>
+      <image:title>Panoramic Couple Suite &amp; Jacuzzi at Nikita Spa Koramangala</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/spa-treatment-room-circular-layout-bengaluru.webp</image:loc>
+      <image:title>Circular Treatment Suite Layout at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/spa-relaxation-room-evening-ambiance-bengaluru.webp</image:loc>
+      <image:title>Evening Sanctuary Atmosphere at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/private-hydrotherapy-suite-bengaluru.webp</image:loc>
+      <image:title>Private Hydrotherapy Suite at Nikita Spa Bengaluru</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nikita.online/images/nikita-spa-aromatherapy-preparation-tray.webp</image:loc>
+      <image:title>Massage Preparations &amp; Aromatherapy Tray at Nikita Spa Koramangala</image:title>
+    </image:image>
   </url>
+
+  <!-- Contact Page -->
   <url>
     <loc>https://nikita.online/contact</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://nikita.online/images/couple-spa-room-jacuzzi-koramangala.webp</image:loc>
+      <image:title>Nikita Spa Koramangala Bengaluru Location &amp; Reception</image:title>
+    </image:image>
   </url>
 
-  <!-- Legal & Transparency Pages -->
+  <!-- Legal & Informational Pages -->
   <url>
     <loc>https://nikita.online/privacy-policy</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
   <url>
     <loc>https://nikita.online/terms-and-conditions</loc>
     <lastmod>2026-11-20</lastmod>

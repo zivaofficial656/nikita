@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
           {/* Brand Identity: Love Logo */}
           <Link to="/" className="flex items-center group focus:outline-none" aria-label="Love">
             <img
-              src="/images/Love Lady Heart Silhouette Logo.png"
+              src="/images/nikita-spa-logo.png"
               alt="Love"
               className="h-10 sm:h-12 w-auto object-contain object-left group-hover:opacity-90 transition-opacity"
             />
@@ -140,7 +140,7 @@ export const Header: React.FC = () => {
         <div className="lg:hidden border-t border-borderCream bg-ivory/98 backdrop-blur-md px-5 py-6 shadow-2xl animate-fade-in">
           <div className="flex items-center justify-between pb-4 mb-3 border-b border-borderCream">
             <img
-              src="/images/Love Lady Heart Silhouette Logo.png"
+              src="/images/nikita-spa-logo.png"
               alt="Love"
               className="h-9 w-auto object-contain object-left"
             />

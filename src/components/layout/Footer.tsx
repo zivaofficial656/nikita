@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-5">
             <Link to="/" className="inline-block group focus:outline-none" aria-label="Love">
               <img
-                src="/images/Love Lady Heart Silhouette Logo.png"
+                src="/images/nikita-spa-logo.png"
                 alt="Love"
                 className="h-12 sm:h-14 w-auto object-contain object-left group-hover:opacity-90 transition-opacity"
               />

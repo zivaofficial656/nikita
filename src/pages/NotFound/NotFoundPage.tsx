@@ -7,7 +7,7 @@ export const NotFoundPage: React.FC = () => {
     <div className="max-w-3xl mx-auto px-4 py-24 sm:py-32 text-center">
       <div className="w-20 h-20 rounded-full bg-white border border-gold-400 p-2 flex items-center justify-center mx-auto mb-6 shadow-md overflow-hidden">
         <img
-          src="/images/Love Lady Heart Silhouette Logo.png"
+          src="/images/nikita-spa-logo.png"
           alt="Love"
           className="w-full h-full object-contain object-center"
         />
