@@ -4,6 +4,7 @@ import { MapPin, Phone, MessageSquare, Sparkles, CheckCircle2, ShieldCheck, Navi
 import { servicesData } from '../data/services';
 import { getLocalBusinessSchema, getBreadcrumbSchema } from '../utils/seoSchema';
 import { trackFormSubmission, trackCallClick, trackWhatsAppClick, trackDirectionsClick } from '../utils/analytics';
+import { BUSINESS_INFO } from '../data/business';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -130,7 +131,7 @@ export const Contact: React.FC = () => {
 
                   {/* Address */}
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+                    href={BUSINESS_INFO.maps.searchUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="View Nikita Spa on Google Maps"
@@ -144,11 +145,11 @@ export const Contact: React.FC = () => {
                         Location
                       </span>
                       <p className="text-sm font-medium text-olive-dark group-hover:text-gold transition-colors mt-0.5 flex items-center gap-1.5">
-                        <span>Nikita Spa, Koramangala</span>
+                        <span>Nikita Spa, {BUSINESS_INFO.address.building}</span>
                         <ExternalLink className="w-3.5 h-3.5 text-charcoal-muted group-hover:text-gold transition-colors" />
                       </p>
                       <p className="text-xs text-charcoal-muted mt-0.5">
-                        Bengaluru, Karnataka, India
+                        {BUSINESS_INFO.address.block}, {BUSINESS_INFO.address.city}, Karnataka {BUSINESS_INFO.address.postalCode}, {BUSINESS_INFO.address.country}
                       </p>
                     </div>
                   </a>
@@ -316,7 +317,7 @@ export const Contact: React.FC = () => {
                 
                 {/* Clickable Location Card / Marker Overlay */}
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+                  href={BUSINESS_INFO.maps.searchUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Open Nikita Spa coordinates on Google Maps"
@@ -327,17 +328,17 @@ export const Contact: React.FC = () => {
                   </div>
                   <div className="min-w-0 pr-1">
                     <div className="flex items-center gap-1 font-semibold text-charcoal text-xs sm:text-sm group-hover:text-gold transition-colors truncate">
-                      <span>Nikita Spa</span>
+                      <span>{BUSINESS_INFO.name}</span>
                       <ExternalLink className="w-3 h-3 text-charcoal-muted group-hover:text-gold shrink-0" />
                     </div>
                     <p className="text-[11px] sm:text-xs text-charcoal-muted truncate">
-                      Koramangala, Bengaluru
+                      {BUSINESS_INFO.address.short}
                     </p>
                   </div>
                 </a>
 
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1795150229379!5m2!1sen!2sin!6m8!1m7!1sNqb-qpDDQKb6KE3Wv6XDbQ!2m2!1d12.93401024156366!2d77.63006964588301!3f227.39533733709914!4f36.89930718876852!5f0.7820865974627469"
+                  src={BUSINESS_INFO.maps.embedUrl}
                   width="600"
                   height="450"
                   style={{ border: 0 }}
@@ -362,25 +363,25 @@ export const Contact: React.FC = () => {
                     </span>
                   </div>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+                    href={BUSINESS_INFO.maps.searchUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-serif text-2xl font-medium text-olive-dark hover:text-gold transition-colors mb-1 inline-flex items-center gap-2 group cursor-pointer"
                   >
-                    <span>Nikita Spa</span>
+                    <span>{BUSINESS_INFO.name}</span>
                     <ExternalLink className="w-4 h-4 text-charcoal-muted group-hover:text-gold transition-colors" />
                   </a>
                   <p className="text-xs sm:text-sm text-charcoal-light flex items-center gap-1.5">
                     <MapPin className="w-4 h-4 text-gold shrink-0" />
-                    <span>Koramangala, Bengaluru, Karnataka, India</span>
+                    <span>{BUSINESS_INFO.address.full}</span>
                   </p>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3">
                   <a
-                    href="tel:+919693264878"
+                    href={BUSINESS_INFO.phoneTel}
                     onClick={() => trackCallClick('contact_page_map')}
-                    aria-label="Call Nikita Spa at +91 9693264878"
+                    aria-label={`Call Nikita Spa at ${BUSINESS_INFO.phoneFormatted}`}
                     className="py-3 px-5 rounded-2xl bg-cream hover:bg-cream-dark text-olive-dark text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-2 border border-cream-dark"
                   >
                     <Phone className="w-4 h-4 text-olive" />
@@ -388,7 +389,7 @@ export const Contact: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://wa.me/919693264878"
+                    href={BUSINESS_INFO.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackWhatsAppClick('contact_page_map')}
@@ -400,7 +401,7 @@ export const Contact: React.FC = () => {
                   </a>
 
                   <a
-                    href="https://www.google.com/maps/dir/?api=1&destination=12.93401024156366,77.63006964588301"
+                    href={BUSINESS_INFO.maps.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackDirectionsClick('contact_page_map')}

@@ -21,7 +21,7 @@ export const faqData: FAQItem[] = [
   {
     id: 'faq-3',
     question: 'Where is Nikita Spa located in Bengaluru?',
-    answer: 'Nikita Spa is conveniently located in the vibrant neighborhood of Koramangala, Bengaluru, Karnataka, India. Our location offers easy accessibility from nearby areas such as HSR Layout, Indiranagar, and BTM Layout while maintaining a quiet, peaceful sanctuary tucked away from urban commotion.',
+    answer: 'Nikita Spa is conveniently located at Indiqube Octa, 4th Block, Koramangala, Bengaluru, Karnataka 560034, India. Our location offers easy accessibility from 80 Feet Road, 100 Feet Road, and nearby areas such as HSR Layout, Indiranagar, and BTM Layout while maintaining a quiet, peaceful sanctuary tucked away from urban commotion.',
     category: 'Location & Contact'
   },
   {

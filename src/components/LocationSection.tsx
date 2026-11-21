@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, MessageSquare, Compass, Clock, Navigation, CheckCircle2, ExternalLink } from 'lucide-react';
 import { trackCallClick, trackWhatsAppClick, trackDirectionsClick } from '../utils/analytics';
+import { BUSINESS_INFO } from '../data/business';
 
 export const LocationSection: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ export const LocationSection: React.FC = () => {
             Visit Nikita Spa
           </h2>
           <p className="text-sm sm:text-base text-charcoal-muted leading-relaxed font-light">
-            Your Relaxation Destination in Koramangala, Bengaluru.
+            {BUSINESS_INFO.tagline}
           </p>
         </div>
 
@@ -29,7 +30,7 @@ export const LocationSection: React.FC = () => {
             <div className="space-y-6">
               
               <a
-                href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+                href={BUSINESS_INFO.maps.searchUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View Nikita Spa location on Google Maps"
@@ -45,13 +46,13 @@ export const LocationSection: React.FC = () => {
                   </span>
                 </div>
                 <h3 className="font-serif text-2xl font-medium text-olive-dark group-hover:text-gold transition-colors mb-2 flex items-center gap-2">
-                  <span>Nikita Spa</span>
+                  <span>{BUSINESS_INFO.name}</span>
                   <ExternalLink className="w-4 h-4 text-charcoal-muted group-hover:text-gold transition-colors" />
                 </h3>
                 <p className="text-sm text-charcoal-light flex items-start gap-2 leading-relaxed">
                   <MapPin className="w-4 h-4 text-gold shrink-0 mt-1" />
                   <span>
-                    Koramangala, Bengaluru, Karnataka, India
+                    {BUSINESS_INFO.address.full}
                   </span>
                 </p>
               </a>
@@ -62,7 +63,7 @@ export const LocationSection: React.FC = () => {
                   <Navigation className="w-4 h-4 text-olive shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-charcoal-light block">Neighborhood Accessibility:</span>
-                    <span>Directly accessible from 100 Feet Road, 80 Feet Road, and surrounding Koramangala blocks with easy cab and metro connectivity.</span>
+                    <span>Located at Indiqube Octa on 80 Feet Road, 4th Block, Koramangala with easy access from 100 Feet Road, Sony World Signal, and quick cab and transit connectivity.</span>
                   </div>
                 </div>
 
@@ -80,7 +81,7 @@ export const LocationSection: React.FC = () => {
             {/* Direct Connect & Navigation Action Buttons */}
             <div className="pt-6 border-t border-cream-dark space-y-3">
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=12.93401024156366,77.63006964588301"
+                href={BUSINESS_INFO.maps.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackDirectionsClick('location_section_card')}
@@ -93,9 +94,9 @@ export const LocationSection: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
-                  href="tel:+919693264878"
+                  href={BUSINESS_INFO.phoneTel}
                   onClick={() => trackCallClick('location_section')}
-                  aria-label="Call Nikita Spa at +91 9693264878"
+                  aria-label={`Call Nikita Spa at ${BUSINESS_INFO.phoneFormatted}`}
                   className="py-3 px-4 rounded-2xl bg-cream hover:bg-cream-dark text-olive-dark text-xs sm:text-sm font-medium transition-colors text-center flex items-center justify-center gap-2 border border-cream-dark"
                 >
                   <Phone className="w-4 h-4 text-olive" />
@@ -103,7 +104,7 @@ export const LocationSection: React.FC = () => {
                 </a>
 
                 <a
-                  href="https://wa.me/919693264878"
+                  href={BUSINESS_INFO.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackWhatsAppClick('location_section')}
@@ -123,7 +124,7 @@ export const LocationSection: React.FC = () => {
             
             {/* Clickable Location Card / Marker Overlay */}
             <a
-              href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+              href={BUSINESS_INFO.maps.searchUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open Nikita Spa coordinates on Google Maps"
@@ -138,14 +139,14 @@ export const LocationSection: React.FC = () => {
                   <ExternalLink className="w-3 h-3 text-charcoal-muted group-hover:text-gold shrink-0" />
                 </div>
                 <p className="text-[11px] sm:text-xs text-charcoal-muted truncate">
-                  Koramangala, Bengaluru
+                  Indiqube Octa, 4th Block, Koramangala
                 </p>
               </div>
             </a>
 
             {/* Embedded Google Maps frame with exact Nikita Spa coordinates */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1795150229379!5m2!1sen!2sin!6m8!1m7!1sNqb-qpDDQKb6KE3Wv6XDbQ!2m2!1d12.93401024156366!2d77.63006964588301!3f227.39533733709914!4f36.89930718876852!5f0.7820865974627469"
+              src={BUSINESS_INFO.maps.embedUrl}
               width="600"
               height="450"
               style={{ border: 0 }}
@@ -159,18 +160,18 @@ export const LocationSection: React.FC = () => {
             {/* Verification & Directions badge bar */}
             <div className="p-4 bg-ivory border-t border-cream-dark flex flex-wrap items-center justify-between text-xs text-charcoal-muted gap-2">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301"
+                href={BUSINESS_INFO.maps.searchUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View Nikita Spa on Google Maps"
                 className="flex items-center gap-1.5 hover:text-gold transition-colors group cursor-pointer"
               >
                 <MapPin className="w-3.5 h-3.5 text-red-500 fill-red-500 shrink-0" />
-                <span className="group-hover:underline">Nikita Spa &bull; Koramangala, Bengaluru</span>
+                <span className="group-hover:underline">Nikita Spa &bull; Indiqube Octa, 4th Block, Koramangala</span>
                 <ExternalLink className="w-3 h-3 text-charcoal-muted group-hover:text-gold shrink-0" />
               </a>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=12.93401024156366,77.63006964588301"
+                href={BUSINESS_INFO.maps.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackDirectionsClick('location_section_badge')}

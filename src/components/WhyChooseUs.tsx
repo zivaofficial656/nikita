@@ -27,7 +27,7 @@ export const WhyChooseUs: React.FC = () => {
     {
       icon: MapPin,
       title: 'Convenient Koramangala Location',
-      description: 'Centrally situated in Koramangala, Bengaluru, offering easy access for residents and working professionals from nearby areas without lengthy commutes.'
+      description: 'Centrally situated at Indiqube Octa, 4th Block, Koramangala, Bengaluru, offering easy access for residents and working professionals from nearby areas without lengthy commutes.'
     }
   ];
 

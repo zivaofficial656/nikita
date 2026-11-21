@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MessageSquare, MapPin, Clock, ShieldCheck, Heart } from 'lucide-react';
 import { trackCallClick, trackWhatsAppClick } from '../utils/analytics';
+import { BUSINESS_INFO } from '../data/business';
 
 interface FooterProps {
   onOpenBooking: () => void;
@@ -105,17 +106,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             
             <div className="flex items-start gap-3 text-sm">
               <MapPin className="w-4 h-4 text-gold shrink-0 mt-1" />
-              <span>Koramangala, Bengaluru, Karnataka, India</span>
+              <span>{BUSINESS_INFO.address.full}</span>
             </div>
 
             <div className="flex items-center gap-3 text-sm">
               <Phone className="w-4 h-4 text-gold shrink-0" />
               <a 
-                href="tel:+919693264878" 
+                href={BUSINESS_INFO.phoneTel} 
                 onClick={() => trackCallClick('footer')}
                 className="hover:text-gold transition-colors font-medium"
               >
-                +91 9693264878
+                {BUSINESS_INFO.phoneFormatted}
               </a>
             </div>
 
@@ -143,7 +144,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-ivory/50 gap-4">
           <p>
-            &copy; {new Date().getFullYear()} Nikita Spa. All rights reserved. Koramangala, Bengaluru, Karnataka, India.
+            &copy; {new Date().getFullYear()} {BUSINESS_INFO.name}. All rights reserved. {BUSINESS_INFO.address.full}.
           </p>
           <div className="flex flex-wrap items-center gap-6">
             <Link to="/privacy-policy" className="hover:text-ivory transition-colors">Privacy Policy</Link>

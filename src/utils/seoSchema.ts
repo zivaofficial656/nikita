@@ -1,5 +1,6 @@
 import { ServiceItem } from '../data/services';
 import { faqData } from '../data/faq';
+import { BUSINESS_INFO } from '../data/business';
 
 export const CANONICAL_DOMAIN = 'https://nikita.online';
 
@@ -26,18 +27,18 @@ export const getLocalBusinessSchema = () => ({
   paymentAccepted: 'Cash, Credit Card, UPI, Debit Card',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Koramangala',
-    addressLocality: 'Koramangala, Bengaluru',
-    addressRegion: 'Karnataka',
-    postalCode: '560034',
-    addressCountry: 'IN'
+    streetAddress: BUSINESS_INFO.address.streetAddress,
+    addressLocality: BUSINESS_INFO.address.locality,
+    addressRegion: BUSINESS_INFO.address.state,
+    postalCode: BUSINESS_INFO.address.postalCode,
+    addressCountry: BUSINESS_INFO.address.countryCode
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 12.93401024156366,
-    longitude: 77.63006964588301
+    latitude: BUSINESS_INFO.geo.latitude,
+    longitude: BUSINESS_INFO.geo.longitude
   },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=12.93401024156366,77.63006964588301',
+  hasMap: BUSINESS_INFO.maps.searchUrl,
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',

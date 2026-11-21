@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
 import { ShieldCheck, ArrowLeft } from 'lucide-react';
 import { getBreadcrumbSchema, getLocalBusinessSchema } from '../utils/seoSchema';
+import { BUSINESS_INFO } from '../data/business';
 
 export const PrivacyPolicy: React.FC = () => {
   const schemas = [
@@ -102,8 +103,8 @@ export const PrivacyPolicy: React.FC = () => {
                   If you have questions regarding this privacy policy or wish to request data deletion, please contact our Koramangala front desk:
                 </p>
                 <p className="mt-2 text-xs sm:text-sm text-charcoal font-medium">
-                  Nikita Spa &bull; Koramangala, Bengaluru, Karnataka, India<br />
-                  Telephone / WhatsApp: <a href="tel:+919693264878" className="text-olive underline">+91 9693264878</a>
+                  {BUSINESS_INFO.name} &bull; {BUSINESS_INFO.address.full}<br />
+                  Telephone / WhatsApp: <a href={BUSINESS_INFO.phoneTel} className="text-olive underline">{BUSINESS_INFO.phoneFormatted}</a>
                 </p>
               </div>
 

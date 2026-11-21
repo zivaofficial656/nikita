@@ -3,6 +3,7 @@ import { SEOHead } from '../components/SEOHead';
 import { Sparkles, HeartHandshake, ShieldCheck, Flower2, Clock, MapPin, MessageSquare, Phone } from 'lucide-react';
 import { getLocalBusinessSchema, getBreadcrumbSchema } from '../utils/seoSchema';
 import { trackCallClick, trackWhatsAppClick } from '../utils/analytics';
+import { BUSINESS_INFO } from '../data/business';
 
 interface AboutProps {
   onOpenBooking: () => void;
@@ -98,10 +99,10 @@ export const About: React.FC<AboutProps> = ({ onOpenBooking }) => {
                 <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white p-5 rounded-2xl shadow-premium border border-cream-dark max-w-xs hidden sm:block">
                   <div className="flex items-center gap-2 text-olive mb-1">
                     <MapPin className="w-4 h-4 text-gold" />
-                    <span className="text-xs font-semibold">Koramangala, Bengaluru</span>
+                    <span className="text-xs font-semibold">{BUSINESS_INFO.address.short}</span>
                   </div>
                   <p className="text-[11px] text-charcoal-muted leading-tight">
-                    Quiet, welcoming, and accessible destination in Karnataka.
+                    {BUSINESS_INFO.address.building}, {BUSINESS_INFO.address.block}, {BUSINESS_INFO.address.city} {BUSINESS_INFO.address.postalCode}.
                   </p>
                 </div>
               </div>

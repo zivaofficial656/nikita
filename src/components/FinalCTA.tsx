@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MessageSquare, Sparkles, MapPin } from 'lucide-react';
 import { trackCallClick, trackWhatsAppClick, trackBookingOpen } from '../utils/analytics';
+import { BUSINESS_INFO } from '../data/business';
 
 interface FinalCTAProps {
   onOpenBooking: () => void;
@@ -67,7 +68,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking }) => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-ivory/60 pt-6 border-t border-ivory/10">
           <span className="flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-gold" />
-            <span>Koramangala, Bengaluru, Karnataka, India</span>
+            <span>{BUSINESS_INFO.address.full}</span>
           </span>
           <span className="hidden sm:inline">&bull;</span>
           <button

@@ -127,7 +127,7 @@ export const trackWhatsAppClick = (source: string = 'website', serviceName?: str
 export const trackDirectionsClick = (source: string = 'website'): void => {
   trackEvent('get_directions_click', {
     event_category: 'Location',
-    destination: '12.93401024156366,77.63006964588301',
+    destination: 'Indiqube Octa, 4th Block, Koramangala, Bengaluru, Karnataka 560034',
     source
   });
 };

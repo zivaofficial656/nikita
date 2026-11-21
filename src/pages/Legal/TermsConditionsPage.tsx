@@ -88,7 +88,7 @@ export const TermsConditionsPage: React.FC = () => {
           <div className="p-5 rounded-2xl bg-ivory-100 border border-borderCream text-xs text-black space-y-1">
             <p><strong>Grievance Officer:</strong> Compliance & Safety Officer</p>
             <p><strong>Email:</strong> safety@love.in</p>
-            <p><strong>Address:</strong> Lavelle Road, Bengaluru 560001, Karnataka, India</p>
+            <p><strong>Address:</strong> Indiqube Octa, 4th Block, Koramangala, Bengaluru 560034, Karnataka, India</p>
             <p><strong>Response Time:</strong> Acknowledged within 24 hours.</p>
           </div>
         </section>

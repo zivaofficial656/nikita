@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, Calendar, Clock, Sparkles, Phone, MessageSquare } from 'lucide-react';
 import { servicesData } from '../data/services';
 import { trackBookingSubmit, trackCallClick } from '../utils/analytics';
+import { BUSINESS_INFO } from '../data/business';
 
 interface AppointmentModalProps {
   isOpen: boolean;
@@ -29,7 +30,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     trackBookingSubmit(selectedService);
-    const message = `Hello Nikita Spa, I would like to book an appointment.%0A%0A*Name:* ${encodeURIComponent(name || 'Guest')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Selected Service:* ${encodeURIComponent(selectedService)}%0A*Preferred Date:* ${encodeURIComponent(preferredDate || 'Earliest Available')}%0A*Time Window:* ${encodeURIComponent(preferredTime)}%0A${notes ? `*Special Request:* ${encodeURIComponent(notes)}%0A` : ''}%0APlease confirm slot availability at Nikita Spa, Koramangala.`;
+    const message = `Hello Nikita Spa, I would like to book an appointment.%0A%0A*Name:* ${encodeURIComponent(name || 'Guest')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Selected Service:* ${encodeURIComponent(selectedService)}%0A*Preferred Date:* ${encodeURIComponent(preferredDate || 'Earliest Available')}%0A*Time Window:* ${encodeURIComponent(preferredTime)}%0A${notes ? `*Special Request:* ${encodeURIComponent(notes)}%0A` : ''}%0APlease confirm slot availability at Nikita Spa, Indiqube Octa, 4th Block, Koramangala.`;
     
     window.open(`https://wa.me/919693264878?text=${message}`, '_blank');
     setIsSubmitted(true);
@@ -56,7 +57,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
             </div>
             <h3 className="text-2xl font-serif text-olive-dark mb-2">Appointment Request Initiated</h3>
             <p className="text-charcoal-muted text-sm mb-6 max-w-sm mx-auto">
-              Your request details have been forwarded to our front desk via WhatsApp. Our concierge at Koramangala will confirm your slot shortly.
+              Your request details have been forwarded to our front desk via WhatsApp. Our concierge at Indiqube Octa, 4th Block, Koramangala will confirm your slot shortly.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
@@ -88,7 +89,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 Book an Appointment
               </h3>
               <p className="text-charcoal-muted text-sm mt-1">
-                Nikita Spa, Koramangala, Bengaluru
+                {BUSINESS_INFO.name} &bull; {BUSINESS_INFO.address.short}
               </p>
             </div>
 

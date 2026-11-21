@@ -40,7 +40,7 @@ export const ContactPage: React.FC = () => {
                 <MapPin className="w-5 h-5 text-burgundy flex-shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-black font-bold">Central Enclave Operations:</strong>
-                  <span className="text-black font-normal">Lavelle Road & UB City Corridor, Bengaluru 560001, Karnataka, India</span>
+                  <span className="text-black font-normal">Indiqube Octa, 4th Block, Koramangala, Bengaluru 560034, Karnataka, India</span>
                 </div>
               </div>
 
